@@ -66,6 +66,7 @@ wire        stick_1_phase_ready;
 wire [23:0] stick_1_phase_data;
 wire        stick_1_phase_valid;
 
+wire        stick_1_signal_ready;
 wire        stick_1_signal_valid;
 wire [16:0] stick_1_signal_data;
 reg  [15:0] stick_1_out_data;
@@ -77,7 +78,7 @@ axis_phase_generator #(
     .aclk(clk),
     .aresetn(rstn),
     
-    .cfg_data(13'h01FF),
+    .cfg_data(13'h0EB8),
     
     .m_axis_tready(stick_1_phase_ready),
     .m_axis_tdata(stick_1_phase_data),
@@ -92,7 +93,8 @@ generator stick_1_gen (
     .phase_tvalid(stick_1_phase_valid),
     
     .signal_tdata(stick_1_signal_data),
-    .signal_tvalid(stick_1_signal_valid)
+    .signal_tvalid(stick_1_signal_valid),
+    .signal_tready(stick_1_signal_ready)
 );
 
 pmodda3 stick_dac_out (
@@ -100,7 +102,7 @@ pmodda3 stick_dac_out (
     .rstn(rstn),
     
     .data(stick_1_out_data),
-    .ready(),
+    .ready(stick_1_signal_ready),
     .valid(stick_1_signal_valid),
     
     .cs(dac_cs),

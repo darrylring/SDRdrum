@@ -246,6 +246,12 @@
             </spirit:vector>
           </spirit:wire>
         </spirit:port>
+        <spirit:port>
+          <spirit:name>signal_tready</spirit:name>
+          <spirit:wire>
+            <spirit:direction>in</spirit:direction>
+          </spirit:wire>
+        </spirit:port>
       </spirit:ports>
     </spirit:model>
   </spirit:component>
@@ -268,6 +274,8 @@
           <spirit:configurableElementValue spirit:referenceId="Output_Width">17</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="Round_Mode">Round_Pos_Neg_Inf</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="Compensation_Scaling">Embedded_Multiplier</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="flow_control">Blocking</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="out_tready">true</spirit:configurableElementValue>
         </spirit:configurableElementValues>
       </spirit:componentInstance>
       <spirit:componentInstance>
@@ -331,6 +339,11 @@
         <spirit:name>cos_Dout</spirit:name>
         <spirit:internalPortReference spirit:componentRef="cos" spirit:portRef="Dout"/>
         <spirit:externalPortReference spirit:portRef="signal_tdata"/>
+      </spirit:adHocConnection>
+      <spirit:adHocConnection>
+        <spirit:name>signal_tready_1</spirit:name>
+        <spirit:externalPortReference spirit:portRef="signal_tready"/>
+        <spirit:internalPortReference spirit:componentRef="rotate" spirit:portRef="m_axis_dout_tready"/>
       </spirit:adHocConnection>
     </spirit:adHocConnections>
     <spirit:hierConnections>

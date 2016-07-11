@@ -34,13 +34,13 @@
     <Option Name="WTVcsLaunchSim" Val="0"/>
     <Option Name="WTRivieraLaunchSim" Val="0"/>
     <Option Name="WTActivehdlLaunchSim" Val="0"/>
-    <Option Name="WTXSimExportSim" Val="9"/>
-    <Option Name="WTModelSimExportSim" Val="9"/>
-    <Option Name="WTQuestaExportSim" Val="9"/>
-    <Option Name="WTIesExportSim" Val="9"/>
-    <Option Name="WTVcsExportSim" Val="9"/>
-    <Option Name="WTRivieraExportSim" Val="9"/>
-    <Option Name="WTActivehdlExportSim" Val="9"/>
+    <Option Name="WTXSimExportSim" Val="10"/>
+    <Option Name="WTModelSimExportSim" Val="10"/>
+    <Option Name="WTQuestaExportSim" Val="10"/>
+    <Option Name="WTIesExportSim" Val="10"/>
+    <Option Name="WTVcsExportSim" Val="10"/>
+    <Option Name="WTRivieraExportSim" Val="10"/>
+    <Option Name="WTActivehdlExportSim" Val="10"/>
     <Option Name="GenerateIPUpgradeLog" Val="TRUE"/>
   </Configuration>
   <FileSets Version="1" Minor="31">
@@ -54,16 +54,16 @@
         </FileInfo>
         <CompFileExtendedInfo CompFileName="channel.bd" FileRelPathName="ip/channel_x_cic_filter_0/channel_x_cic_filter_0.xci"/>
         <CompFileExtendedInfo CompFileName="channel.bd" FileRelPathName="ip/channel_y_cic_filter_0/channel_y_cic_filter_0.xci"/>
+        <CompFileExtendedInfo CompFileName="channel.bd" FileRelPathName="hw_handoff/channel_bd.tcl"/>
+        <CompFileExtendedInfo CompFileName="channel.bd" FileRelPathName="channel_ooc.xdc"/>
         <CompFileExtendedInfo CompFileName="channel.bd" FileRelPathName="ip/channel_combine_xy_0/channel_combine_xy_0.xci"/>
         <CompFileExtendedInfo CompFileName="channel.bd" FileRelPathName="ip/channel_translate_0/channel_translate_0.xci"/>
-        <CompFileExtendedInfo CompFileName="channel.bd" FileRelPathName="channel_ooc.xdc"/>
         <CompFileExtendedInfo CompFileName="channel.bd" FileRelPathName="ip/channel_magnitude_0/channel_magnitude_0.xci"/>
         <CompFileExtendedInfo CompFileName="channel.bd" FileRelPathName="hdl/channel.v"/>
-        <CompFileExtendedInfo CompFileName="channel.bd" FileRelPathName="hw_handoff/channel.hwh"/>
-        <CompFileExtendedInfo CompFileName="channel.bd" FileRelPathName="hw_handoff/channel_bd.tcl"/>
         <CompFileExtendedInfo CompFileName="channel.bd" FileRelPathName="ip/channel_y_0/channel_y_0.xci"/>
         <CompFileExtendedInfo CompFileName="channel.bd" FileRelPathName="ip/channel_zero_0/channel_zero_0.xci"/>
         <CompFileExtendedInfo CompFileName="channel.bd" FileRelPathName="ip/channel_x_0/channel_x_0.xci"/>
+        <CompFileExtendedInfo CompFileName="channel.bd" FileRelPathName="hw_handoff/channel.hwh"/>
         <CompFileExtendedInfo CompFileName="channel.bd" FileRelPathName="hdl/channel.hwdef"/>
         <CompFileExtendedInfo CompFileName="channel.bd" FileRelPathName="ip/channel_concat_0/channel_concat_0.xci"/>
         <CompFileExtendedInfo CompFileName="channel.bd" FileRelPathName="ip/channel_rotate_0/channel_rotate_0.xci"/>
@@ -84,12 +84,12 @@
         <CompFileExtendedInfo CompFileName="generator.bd" FileRelPathName="ip/generator_one_2/generator_one_2.xci"/>
         <CompFileExtendedInfo CompFileName="generator.bd" FileRelPathName="ip/generator_rotate_0/generator_rotate_0.xci"/>
         <CompFileExtendedInfo CompFileName="generator.bd" FileRelPathName="ip/generator_cos_0/generator_cos_0.xci"/>
+        <CompFileExtendedInfo CompFileName="generator.bd" FileRelPathName="hw_handoff/generator.hwh"/>
         <CompFileExtendedInfo CompFileName="generator.bd" FileRelPathName="ip/generator_one_0/generator_one_0.xci"/>
+        <CompFileExtendedInfo CompFileName="generator.bd" FileRelPathName="hdl/generator.v"/>
+        <CompFileExtendedInfo CompFileName="generator.bd" FileRelPathName="generator_ooc.xdc"/>
         <CompFileExtendedInfo CompFileName="generator.bd" FileRelPathName="hw_handoff/generator_bd.tcl"/>
         <CompFileExtendedInfo CompFileName="generator.bd" FileRelPathName="hdl/generator.hwdef"/>
-        <CompFileExtendedInfo CompFileName="generator.bd" FileRelPathName="generator_ooc.xdc"/>
-        <CompFileExtendedInfo CompFileName="generator.bd" FileRelPathName="hdl/generator.v"/>
-        <CompFileExtendedInfo CompFileName="generator.bd" FileRelPathName="hw_handoff/generator.hwh"/>
       </File>
       <File Path="$PPRDIR/../../rtl/pmodad1.v">
         <FileInfo>

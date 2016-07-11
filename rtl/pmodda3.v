@@ -81,11 +81,11 @@ always @* begin
                 cs_next = 1'b0;
             end
 
-            if (count_reg >= 7'h08 && count_reg[1:0] == 2'b00) begin
+            if (count_reg >= 7'h04 && count_reg[1:0] == 2'b00) begin
                 {din_next, data_next} = {data_reg, 1'b0};
             end
 
-            if (count_reg == 7'h48) begin
+            if (count_reg == 7'h44) begin
                 cs_next = 1'b1;
 
                 count_next = 7'b0;
@@ -103,6 +103,7 @@ always @* begin
 
             if (count_reg[2] == 1'b1) begin
                 state_next = STATE_WAIT;
+                count_next = 7'b0;
             end
 
         end
@@ -110,7 +111,7 @@ always @* begin
             state_next = STATE_WAIT;
             count_next = count_reg + 1;
 
-            if (count_reg == 7'h18) begin
+            if (count_reg == 7'h17) begin
                 state_next = STATE_IDLE;
                 count_next = 7'b0;
             end
