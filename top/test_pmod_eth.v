@@ -28,12 +28,22 @@ module test_pmod_eth (
     input  wire       adc_data0,
     input  wire       adc_data1,
     output wire       adc_cs,
+
+    output wire       adc2_clk,
+    input  wire       adc2_data0,
+    input  wire       adc2_data1,
+    output wire       adc2_cs,
     
     // DACs
     output wire       dac_clk,
     output wire       dac_data,
     output wire       dac_ldac,
-    output wire       dac_cs
+    output wire       dac_cs,
+    
+    output wire       dac2_clk,
+    output wire       dac2_data,
+    output wire       dac2_ldac,
+    output wire       dac2_cs
 );
 
 
@@ -71,6 +81,15 @@ wire        stick_1_signal_valid;
 wire [16:0] stick_1_signal_data;
 reg  [15:0] stick_1_out_data;
 
+wire        stick_2_phase_ready;
+wire [23:0] stick_2_phase_data;
+wire        stick_2_phase_valid;
+
+wire        stick_2_signal_ready;
+wire        stick_2_signal_valid;
+wire [16:0] stick_2_signal_data;
+reg  [15:0] stick_2_out_data;
+
 axis_phase_generator #(
     .AXIS_TDATA_WIDTH(24),
     .PHASE_WIDTH(15)
@@ -85,6 +104,20 @@ axis_phase_generator #(
     .m_axis_tvalid(stick_1_phase_valid)
 );
 
+axis_phase_generator #(
+    .AXIS_TDATA_WIDTH(24),
+    .PHASE_WIDTH(15)
+) stick_2_phase (
+    .aclk(clk),
+    .aresetn(rstn),
+    
+    .cfg_data(13'h1000),
+    
+    .m_axis_tready(stick_2_phase_ready),
+    .m_axis_tdata(stick_2_phase_data),
+    .m_axis_tvalid(stick_2_phase_valid)
+);
+
 generator stick_1_gen (
     .aclk(clk),
     
@@ -95,6 +128,18 @@ generator stick_1_gen (
     .signal_tdata(stick_1_signal_data),
     .signal_tvalid(stick_1_signal_valid),
     .signal_tready(stick_1_signal_ready)
+);
+
+generator stick_2_gen (
+    .aclk(clk),
+    
+    .phase_tdata(stick_2_phase_data),
+    .phase_tready(stick_2_phase_ready),
+    .phase_tvalid(stick_2_phase_valid),
+    
+    .signal_tdata(stick_2_signal_data),
+    .signal_tvalid(stick_2_signal_valid),
+    .signal_tready(stick_2_signal_ready)
 );
 
 pmodda3 stick_dac_out (
@@ -111,11 +156,31 @@ pmodda3 stick_dac_out (
     .sclk(dac_clk)
 );
 
+pmodda3 stick_dac2_out (
+    .clk(clk),
+    .rstn(rstn),
+    
+    .data(stick_2_out_data),
+    .ready(stick_2_signal_ready),
+    .valid(stick_2_signal_valid),
+    
+    .cs(dac2_cs),
+    .din(dac2_data),
+    .ldac(dac2_ldac),
+    .sclk(dac2_clk)
+);
+
 always @* begin
     if (stick_1_signal_data[16:0] == 17'h8000) begin
         stick_1_out_data = 16'hFFFF;
     end else begin
         stick_1_out_data = {~stick_1_signal_data[15], stick_1_signal_data[14:0]};
+    end
+    
+    if (stick_2_signal_data[16:0] == 17'h8000) begin
+        stick_2_out_data = 16'hFFFF;
+    end else begin
+        stick_2_out_data = {~stick_2_signal_data[15], stick_2_signal_data[14:0]};
     end
 end
 
@@ -125,14 +190,32 @@ end
 //==============================================================================
 
 wire corner_ab_ready;
+wire corner_cd_ready;
+
 wire [15:0] corner_a_data;
 wire [15:0] corner_b_data;
+wire [15:0] corner_c_data;
+wire [15:0] corner_d_data;
 
 wire [15:0] magnitude_1_a_data;
 wire [15:0] magnitude_1_b_data;
+wire [15:0] magnitude_1_c_data;
+wire [15:0] magnitude_1_d_data;
 
 wire magnitude_1_a_valid;
 wire magnitude_1_b_valid;
+wire magnitude_1_c_valid;
+wire magnitude_1_d_valid;
+
+wire [15:0] magnitude_2_a_data;
+wire [15:0] magnitude_2_b_data;
+wire [15:0] magnitude_2_c_data;
+wire [15:0] magnitude_2_d_data;
+
+wire magnitude_2_a_valid;
+wire magnitude_2_b_valid;
+wire magnitude_2_c_valid;
+wire magnitude_2_d_valid;
 
 pmodad1 corner_ab_adc_in ( 
     .fpga_clk_i(clk),
@@ -151,7 +234,24 @@ pmodad1 corner_ab_adc_in (
     .cs_o(adc_cs)
 );
 
-channel corner_dsp_a (
+pmodad1 corner_cd_adc_in ( 
+    .fpga_clk_i(clk),
+    .adc_clk_i(pmod_clk),
+    .reset_n_i(rstn),
+    
+    .en_0_i(1'b1),
+    .en_1_i(1'b1),        
+    .data_rdy_o(corner_cd_ready),
+    .data_0_o(corner_c_data),
+    .data_1_o(corner_d_data),  
+    
+    .data_0_i(adc2_data0),
+    .data_1_i(adc2_data1),
+    .sclk_o(adc2_clk),
+    .cs_o(adc2_cs)
+);
+
+channel corner_dsp_1_a (
     .aclk(clk),
     .aresetn(rstn),
     
@@ -168,7 +268,7 @@ channel corner_dsp_a (
 );
 
 
-channel corner_dsp_b (
+channel corner_dsp_1_b (
     .aclk(clk),
     .aresetn(rstn),
     
@@ -183,6 +283,109 @@ channel corner_dsp_b (
     .magnitude_tdata(magnitude_1_b_data),
     .magnitude_tvalid(magnitude_1_b_valid)
 );
+
+
+channel corner_dsp_1_c (
+    .aclk(clk),
+    .aresetn(rstn),
+    
+    .phase_tdata(stick_1_phase_data),
+    .phase_tready(),
+    .phase_tvalid(stick_1_phase_valid),
+    
+    .samples_tdata({{7{1'b0}}, {2{~corner_c_data[11]}}, corner_c_data[10:0], 4'b0}),
+    .samples_tready(),
+    .samples_tvalid(corner_cd_ready),
+    
+    .magnitude_tdata(magnitude_1_c_data),
+    .magnitude_tvalid(magnitude_1_c_valid)
+);
+
+
+channel corner_dsp_1_d (
+    .aclk(clk),
+    .aresetn(rstn),
+    
+    .phase_tdata(stick_1_phase_data),
+    .phase_tready(),
+    .phase_tvalid(stick_1_phase_valid),
+    
+    .samples_tdata({{7{1'b0}}, {2{~corner_d_data[11]}}, corner_d_data[10:0], 4'b0}),
+    .samples_tready(),
+    .samples_tvalid(corner_cd_ready),
+    
+    .magnitude_tdata(magnitude_1_d_data),
+    .magnitude_tvalid(magnitude_1_d_valid)
+);
+
+
+channel corner_dsp_2_a (
+    .aclk(clk),
+    .aresetn(rstn),
+    
+    .phase_tdata(stick_2_phase_data),
+    .phase_tready(),
+    .phase_tvalid(stick_2_phase_valid),
+    
+    .samples_tdata({{7{1'b0}}, {2{~corner_a_data[11]}}, corner_a_data[10:0], 4'b0}),
+    .samples_tready(),
+    .samples_tvalid(corner_ab_ready),
+    
+    .magnitude_tdata(magnitude_2_a_data),
+    .magnitude_tvalid(magnitude_2_a_valid)
+);
+
+
+channel corner_dsp_2_b (
+    .aclk(clk),
+    .aresetn(rstn),
+    
+    .phase_tdata(stick_2_phase_data),
+    .phase_tready(),
+    .phase_tvalid(stick_2_phase_valid),
+    
+    .samples_tdata({{7{1'b0}}, {2{~corner_b_data[11]}}, corner_b_data[10:0], 4'b0}),
+    .samples_tready(),
+    .samples_tvalid(corner_ab_ready),
+    
+    .magnitude_tdata(magnitude_2_b_data),
+    .magnitude_tvalid(magnitude_2_b_valid)
+);
+
+
+channel corner_dsp_2_c (
+    .aclk(clk),
+    .aresetn(rstn),
+    
+    .phase_tdata(stick_2_phase_data),
+    .phase_tready(),
+    .phase_tvalid(stick_2_phase_valid),
+    
+    .samples_tdata({{7{1'b0}}, {2{~corner_c_data[11]}}, corner_c_data[10:0], 4'b0}),
+    .samples_tready(),
+    .samples_tvalid(corner_cd_ready),
+    
+    .magnitude_tdata(magnitude_2_c_data),
+    .magnitude_tvalid(magnitude_2_c_valid)
+);
+
+
+channel corner_dsp_2_d (
+    .aclk(clk),
+    .aresetn(rstn),
+    
+    .phase_tdata(stick_2_phase_data),
+    .phase_tready(),
+    .phase_tvalid(stick_2_phase_valid),
+    
+    .samples_tdata({{7{1'b0}}, {2{~corner_d_data[11]}}, corner_d_data[10:0], 4'b0}),
+    .samples_tready(),
+    .samples_tvalid(corner_cd_ready),
+    
+    .magnitude_tdata(magnitude_2_d_data),
+    .magnitude_tvalid(magnitude_2_d_valid)
+);
+
 
 
 //==============================================================================
@@ -217,7 +420,7 @@ framer ethernet_framer (
     .aclk(clk),
     .aresetn(rstn),
     
-    .s_axis_tdata({corner_a_data, corner_b_data, magnitude_1_a_data, magnitude_1_b_data}),
+    .s_axis_tdata({magnitude_1_a_data, magnitude_1_b_data, magnitude_1_c_data, magnitude_1_d_data}),
     .s_axis_tvalid(magnitude_1_a_valid),
     .s_axis_tready(),
     
