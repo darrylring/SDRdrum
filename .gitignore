@@ -1,12 +1,6 @@
-fpga
-!fpga/bd/**/*.bd
-!fpga/ip/**/*.xci
-!fpga/rtl/*.v
-!fpga/rtl/*.vhd
-!fpga/tb/*.v
-!fpga/tb/*.vhd
-!fpga/tcl/*.tcl
-!fpga/top/*.v
-!fpga/top/*.vhd
-!fpga/vivado/**/*.xpr
+reports/*
+!reports/*.eps
+!reports/*.pdf
+!reports/*.png
+!reports/*.tex
 
