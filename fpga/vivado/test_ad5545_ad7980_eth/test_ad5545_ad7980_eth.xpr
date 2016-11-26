@@ -3,10 +3,10 @@
 <!--                                                         -->
 <!-- Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="12" Path="/home/darryl/Projects/radiodrum/fpga/vivado/test_pmod_eth/test_pmod_eth.xpr">
+<Project Version="7" Minor="12" Path="/home/darryl/Projects/radiodrum/fpga/vivado/test_ad5545_ad7980_eth/test_ad5545_ad7980_eth.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
-    <Option Name="Id" Val="041327f06fcf4d7b8ad4a8909b04fd6b"/>
+    <Option Name="Id" Val="47750ff17188407797be2f7e49e3eea5"/>
     <Option Name="Part" Val="xc7a35ticsg324-1L"/>
     <Option Name="CompiledLibDir" Val="$PCACHEDIR/compile_simlib"/>
     <Option Name="CompiledLibDirXSim" Val=""/>
@@ -23,37 +23,66 @@
     <Option Name="XPMLibraries" Val="XPM_CDC"/>
     <Option Name="XPMLibraries" Val="XPM_MEMORY"/>
     <Option Name="CreateRefXciForCoreContainers" Val="FALSE"/>
-    <Option Name="IPUserFilesDir" Val="$PPRDIR/test_pmod_eth.ip_user_files"/>
-    <Option Name="IPStaticSourceDir" Val="$PPRDIR/test_pmod_eth.ip_user_files/ipstatic"/>
+    <Option Name="IPUserFilesDir" Val="$PPRDIR/test_ad5545_ad7980_eth.ip_user_files"/>
+    <Option Name="IPStaticSourceDir" Val="$PPRDIR/test_ad5545_ad7980_eth.ip_user_files/ipstatic"/>
     <Option Name="EnableBDX" Val="FALSE"/>
     <Option Name="DSABoardId" Val="arty"/>
-    <Option Name="WTXSimLaunchSim" Val="1"/>
+    <Option Name="WTXSimLaunchSim" Val="13"/>
     <Option Name="WTModelSimLaunchSim" Val="0"/>
     <Option Name="WTQuestaLaunchSim" Val="0"/>
     <Option Name="WTIesLaunchSim" Val="0"/>
     <Option Name="WTVcsLaunchSim" Val="0"/>
     <Option Name="WTRivieraLaunchSim" Val="0"/>
     <Option Name="WTActivehdlLaunchSim" Val="0"/>
-    <Option Name="WTXSimExportSim" Val="10"/>
-    <Option Name="WTModelSimExportSim" Val="10"/>
-    <Option Name="WTQuestaExportSim" Val="10"/>
-    <Option Name="WTIesExportSim" Val="10"/>
-    <Option Name="WTVcsExportSim" Val="10"/>
-    <Option Name="WTRivieraExportSim" Val="10"/>
-    <Option Name="WTActivehdlExportSim" Val="10"/>
+    <Option Name="WTXSimExportSim" Val="4"/>
+    <Option Name="WTModelSimExportSim" Val="4"/>
+    <Option Name="WTQuestaExportSim" Val="4"/>
+    <Option Name="WTIesExportSim" Val="4"/>
+    <Option Name="WTVcsExportSim" Val="4"/>
+    <Option Name="WTRivieraExportSim" Val="4"/>
+    <Option Name="WTActivehdlExportSim" Val="4"/>
     <Option Name="GenerateIPUpgradeLog" Val="TRUE"/>
   </Configuration>
   <FileSets Version="1" Minor="31">
     <FileSet Name="sources_1" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
       <Filter Type="Srcs"/>
-      <File Path="$PPRDIR/../../bd/channel/channel.bd">
+      <File Path="$PPRDIR/../../rtl/framer.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../../rtl/framer.v">
+      <File Path="$PPRDIR/../../bd/channel/channel.bd">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+        <CompFileExtendedInfo CompFileName="channel.bd" FileRelPathName="ip/channel_y_0/channel_y_0.xci"/>
+        <CompFileExtendedInfo CompFileName="channel.bd" FileRelPathName="ip/channel_x_0/channel_x_0.xci"/>
+        <CompFileExtendedInfo CompFileName="channel.bd" FileRelPathName="ip/channel_zero_0/channel_zero_0.xci"/>
+        <CompFileExtendedInfo CompFileName="channel.bd" FileRelPathName="ip/channel_concat_0/channel_concat_0.xci"/>
+        <CompFileExtendedInfo CompFileName="channel.bd" FileRelPathName="ip/channel_rotate_0/channel_rotate_0.xci"/>
+        <CompFileExtendedInfo CompFileName="channel.bd" FileRelPathName="hdl/channel.v"/>
+        <CompFileExtendedInfo CompFileName="channel.bd" FileRelPathName="ip/channel_magnitude_0/channel_magnitude_0.xci"/>
+        <CompFileExtendedInfo CompFileName="channel.bd" FileRelPathName="ip/channel_combine_xy_0/channel_combine_xy_0.xci"/>
+        <CompFileExtendedInfo CompFileName="channel.bd" FileRelPathName="ip/channel_translate_0/channel_translate_0.xci"/>
+        <CompFileExtendedInfo CompFileName="channel.bd" FileRelPathName="ip/channel_y_cic_filter_0/channel_y_cic_filter_0.xci"/>
+        <CompFileExtendedInfo CompFileName="channel.bd" FileRelPathName="ip/channel_x_cic_filter_0/channel_x_cic_filter_0.xci"/>
+        <CompFileExtendedInfo CompFileName="channel.bd" FileRelPathName="hdl/channel.hwdef"/>
+        <CompFileExtendedInfo CompFileName="channel.bd" FileRelPathName="hw_handoff/channel_bd.tcl"/>
+        <CompFileExtendedInfo CompFileName="channel.bd" FileRelPathName="hw_handoff/channel.hwh"/>
+        <CompFileExtendedInfo CompFileName="channel.bd" FileRelPathName="channel_ooc.xdc"/>
+      </File>
+      <File Path="$PPRDIR/../../rtl/ad7980.v">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/../../ip/xlnx_clk_gen_pmod_eth/xlnx_clk_gen_pmod_eth.xci">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -66,13 +95,15 @@
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
-      </File>
-      <File Path="$PPRDIR/../../rtl/pmodad1.v">
-        <FileInfo>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
+        <CompFileExtendedInfo CompFileName="generator.bd" FileRelPathName="ip/generator_one_0/generator_one_0.xci"/>
+        <CompFileExtendedInfo CompFileName="generator.bd" FileRelPathName="ip/generator_rotate_0/generator_rotate_0.xci"/>
+        <CompFileExtendedInfo CompFileName="generator.bd" FileRelPathName="hdl/generator.hwdef"/>
+        <CompFileExtendedInfo CompFileName="generator.bd" FileRelPathName="hw_handoff/generator_bd.tcl"/>
+        <CompFileExtendedInfo CompFileName="generator.bd" FileRelPathName="hw_handoff/generator.hwh"/>
+        <CompFileExtendedInfo CompFileName="generator.bd" FileRelPathName="generator_ooc.xdc"/>
+        <CompFileExtendedInfo CompFileName="generator.bd" FileRelPathName="hdl/generator.v"/>
+        <CompFileExtendedInfo CompFileName="generator.bd" FileRelPathName="ip/generator_cos_0/generator_cos_0.xci"/>
+        <CompFileExtendedInfo CompFileName="generator.bd" FileRelPathName="ip/generator_valid_0/generator_valid_0.xci"/>
       </File>
       <File Path="$PPRDIR/../../rtl/axis_phase_generator.v">
         <FileInfo>
@@ -81,15 +112,23 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../../rtl/pmodda3.v">
+      <File Path="$PPRDIR/../../rtl/ad5545.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../../top/test_pmod_eth.v">
+      <File Path="$PPRDIR/../../top/test_ad5545_ad7980_eth_top.v">
         <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/../../bd/channel/hdl/channel_wrapper.v">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -97,13 +136,13 @@
       </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
-        <Option Name="TopModule" Val="test_pmod_eth"/>
+        <Option Name="TopModule" Val="test_ad5545_ad7980_eth_top"/>
         <Option Name="TopAutoSet" Val="TRUE"/>
       </Config>
     </FileSet>
     <FileSet Name="constrs_1" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
       <Filter Type="Constrs"/>
-      <File Path="$PPRDIR/../../top/test_pmod_eth.xdc">
+      <File Path="$PPRDIR/../../top/test_ad5545_ad7980_eth.xdc">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -115,21 +154,27 @@
     </FileSet>
     <FileSet Name="sim_1" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/sim_1">
       <Filter Type="Srcs"/>
-      <File Path="$PPRDIR/../../tb/test_pmod_eth_tb.v">
+      <File Path="$PSRCDIR/sim_1/new/test_ad5545_ad7980_eth_tb.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
+      <File Path="$PPRDIR/test_ad5545_ad7980_eth_tb_behav.wcfg">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
-        <Option Name="TopModule" Val="test_pmod_eth_tb"/>
+        <Option Name="TopModule" Val="test_ad5545_ad7980_eth_tb"/>
         <Option Name="TopLib" Val="xil_defaultlib"/>
         <Option Name="TopAutoSet" Val="TRUE"/>
         <Option Name="TransportPathDelay" Val="0"/>
         <Option Name="TransportIntDelay" Val="0"/>
         <Option Name="SrcSet" Val="sources_1"/>
+        <Option Name="XSimWcfgFile" Val="$PPRDIR/test_ad5545_ad7980_eth_tb_behav.wcfg"/>
       </Config>
     </FileSet>
     <FileSet Name="xlnx_ethernetlite" Type="BlockSrcs" RelSrcDir="$PSRCDIR/xlnx_ethernetlite">
@@ -142,19 +187,6 @@
       </File>
       <Config>
         <Option Name="TopModule" Val="xlnx_ethernetlite"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="xlnx_clk_gen_pmod_eth" Type="BlockSrcs" RelSrcDir="$PSRCDIR/xlnx_clk_gen_pmod_eth">
-      <File Path="$PPRDIR/../../ip/xlnx_clk_gen_pmod_eth/xlnx_clk_gen_pmod_eth.xci">
-        <FileInfo>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <Config>
-        <Option Name="TopModule" Val="xlnx_clk_gen_pmod_eth"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
@@ -181,25 +213,21 @@
     </Simulator>
   </Simulators>
   <Runs Version="1" Minor="10">
-    <Run Id="synth_1" Type="Ft3:Synth" SrcSet="sources_1" Part="xc7a35ticsg324-1L" ConstrsSet="constrs_1" Description="Vivado Synthesis Defaults" State="current" IncludeInArchive="true">
+    <Run Id="synth_1" Type="Ft3:Synth" SrcSet="sources_1" Part="xc7a35ticsg324-1L" ConstrsSet="constrs_1" Description="Vivado Synthesis Defaults" State="current" Dir="$PRUNDIR/synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016"/>
         <Step Id="synth_design"/>
       </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
     </Run>
-    <Run Id="xlnx_ethernetlite_synth_1" Type="Ft3:Synth" SrcSet="xlnx_ethernetlite" Part="xc7a35ticsg324-1L" ConstrsSet="xlnx_ethernetlite" Description="Vivado Synthesis Defaults" IncludeInArchive="true">
+    <Run Id="xlnx_ethernetlite_synth_1" Type="Ft3:Synth" SrcSet="xlnx_ethernetlite" Part="xc7a35ticsg324-1L" ConstrsSet="xlnx_ethernetlite" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/xlnx_ethernetlite_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016"/>
         <Step Id="synth_design"/>
       </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
     </Run>
-    <Run Id="xlnx_clk_gen_pmod_eth_synth_1" Type="Ft3:Synth" SrcSet="xlnx_clk_gen_pmod_eth" Part="xc7a35ticsg324-1L" ConstrsSet="xlnx_clk_gen_pmod_eth" Description="Vivado Synthesis Defaults" IncludeInArchive="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016"/>
-        <Step Id="synth_design"/>
-      </Strategy>
-    </Run>
-    <Run Id="impl_1" Type="Ft2:EntireDesign" Part="xc7a35ticsg324-1L" ConstrsSet="constrs_1" Description="Default settings for Implementation." State="current" SynthRun="synth_1" IncludeInArchive="true">
+    <Run Id="impl_1" Type="Ft2:EntireDesign" Part="xc7a35ticsg324-1L" ConstrsSet="constrs_1" Description="Default settings for Implementation." State="current" Dir="$PRUNDIR/impl_1" SynthRun="synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2016"/>
         <Step Id="init_design"/>
@@ -210,24 +238,13 @@
         <Step Id="phys_opt_design"/>
         <Step Id="route_design"/>
         <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
+        <Step Id="write_bitstream">
+          <Option Id="BinFile">1</Option>
+        </Step>
       </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
     </Run>
     <Run Id="xlnx_ethernetlite_impl_1" Type="Ft2:EntireDesign" Part="xc7a35ticsg324-1L" ConstrsSet="xlnx_ethernetlite" Description="Default settings for Implementation." SynthRun="xlnx_ethernetlite_synth_1" IncludeInArchive="false">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2016"/>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
-    </Run>
-    <Run Id="xlnx_clk_gen_pmod_eth_impl_1" Type="Ft2:EntireDesign" Part="xc7a35ticsg324-1L" ConstrsSet="xlnx_clk_gen_pmod_eth" Description="Default settings for Implementation." SynthRun="xlnx_clk_gen_pmod_eth_synth_1" IncludeInArchive="false">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2016"/>
         <Step Id="init_design"/>

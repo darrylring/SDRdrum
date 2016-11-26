@@ -5,7 +5,7 @@ module ad5545
     input  wire        clk,
     input  wire        rstn,
     
-    input  wire [15:0] data,
+    input  wire [31:0] data,
     input  wire        valid,
     output wire        ready,
 
@@ -16,17 +16,18 @@ module ad5545
 );
 
 
-localparam [1:0]
-    STATE_IDLE  = 3'd0,
-    STATE_WRITE = 3'd1,
-    STATE_LOAD  = 3'd2,
-    STATE_WAIT  = 3'd3;
+localparam [2:0]
+    STATE_IDLE       = 3'd0,
+    STATE_WRITE_DAC1 = 3'd1,
+    STATE_WRITE_DAC2 = 3'd2,
+    STATE_LOAD       = 3'd3,
+    STATE_WAIT       = 3'd4;
 
-reg [1:0] state_reg, state_next;
+reg [2:0] state_reg, state_next;
 
 reg [6:0] count_reg, count_next;
 
-reg [15:0] data_reg, data_next;
+reg [35:0] data_reg, data_next;
 
 reg ready_reg, ready_next;
 
@@ -62,36 +63,58 @@ always @* begin
         STATE_IDLE: begin
             
             if (ready & valid) begin
-                data_next = data;
+                data_next = {2'b01, data[31:16], 2'b10, data[15:0]};
                 ready_next = 1'b0;
 
-                state_next = STATE_WRITE;
+                state_next = STATE_WRITE_DAC1;
             end else begin
                 ready_next = 1'b1;
             end
         end
-        STATE_WRITE: begin
-            state_next = STATE_WRITE;
+        STATE_WRITE_DAC1: begin
+            state_next = STATE_WRITE_DAC1;
 
             count_next = count_reg + 1;
 
-            sclk_next = count_reg[1];
+            sclk_next = count_reg[0];
 
-            if (count_reg == 7'h04) begin
+            if (count_reg == 7'h02) begin
                 cs_next = 1'b0;
             end
 
-            if (count_reg >= 7'h04 && count_reg[1:0] == 2'b00) begin
+            if (count_reg >= 7'h02 && count_reg[0] == 1'b0) begin
                 {din_next, data_next} = {data_reg, 1'b0};
             end
 
-            if (count_reg == 7'h44) begin
+            if (count_reg == 7'h26) begin
+                cs_next = 1'b1;
+
+                count_next = 7'b0;
+                state_next = STATE_WRITE_DAC2;
+            end
+
+        end
+        STATE_WRITE_DAC2: begin
+            state_next = STATE_WRITE_DAC2;
+
+            count_next = count_reg + 1;
+
+            sclk_next = count_reg[0];
+
+            if (count_reg == 7'h02) begin
+                cs_next = 1'b0;
+            end
+
+            if (count_reg >= 7'h04 && count_reg[0] == 1'b0) begin
+                {din_next, data_next} = {data_reg, 1'b0};
+            end
+
+            if (count_reg == 7'h26) begin
                 cs_next = 1'b1;
 
                 count_next = 7'b0;
                 state_next = STATE_LOAD;
             end
-
         end
         STATE_LOAD: begin
             state_next = STATE_LOAD;
@@ -111,7 +134,7 @@ always @* begin
             state_next = STATE_WAIT;
             count_next = count_reg + 1;
 
-            if (count_reg == 7'h17) begin
+            if (count_reg == 7'h0e) begin
                 state_next = STATE_IDLE;
                 count_next = 7'b0;
             end

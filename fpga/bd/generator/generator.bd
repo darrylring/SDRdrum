@@ -282,7 +282,7 @@
         <spirit:instanceName>one</spirit:instanceName>
         <spirit:componentRef spirit:library="ip" spirit:name="xlconstant" spirit:vendor="xilinx.com" spirit:version="1.1"/>
         <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">generator_one_2</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">generator_one_0</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="CONST_WIDTH">48</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="CONST_VAL">32768</spirit:configurableElementValue>
         </spirit:configurableElementValues>
@@ -291,7 +291,7 @@
         <spirit:instanceName>valid</spirit:instanceName>
         <spirit:componentRef spirit:library="ip" spirit:name="xlconstant" spirit:vendor="xilinx.com" spirit:version="1.1"/>
         <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">generator_one_0</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">generator_valid_0</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="CONST_WIDTH">1</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="CONST_VAL">1</spirit:configurableElementValue>
         </spirit:configurableElementValues>

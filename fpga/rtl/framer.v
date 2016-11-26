@@ -6,9 +6,9 @@ module framer (
     input  wire        aresetn,
     
     // Input data stream
-    input  wire [63:0] s_axis_tdata,
-    input  wire        s_axis_tvalid,
-    output wire        s_axis_tready,
+    input  wire [127:0] s_axis_tdata,
+    input  wire         s_axis_tvalid,
+    output wire         s_axis_tready,
 
     // Frame output
     output wire [12:0] m_axi_awaddr,
@@ -41,8 +41,8 @@ localparam [2:0]
     STATE_TX_FRAME    = 3'd3,
     STATE_WAIT_DONE   = 3'd4;
 
-reg [63:0] data;
-reg [63:0] data_next;
+reg [127:0] data;
+reg [127:0] data_next;
 
 reg  [2:0] state;
 reg  [2:0] state_next;
@@ -87,7 +87,7 @@ always @* begin
     case (state)
         STATE_INIT: begin
             awaddr_next = 13'h07f4;
-            wdata_next = 32'h004e;
+            wdata_next = 32'h0062;
             
             if (m_axi_awready & m_axi_wready) begin
                 if (m_axi_awvalid & m_axi_wvalid) begin
@@ -126,26 +126,33 @@ always @* begin
                 13'h04: wdata_next = 32'h2211FFFF;
                 13'h08: wdata_next = 32'h66554433;
                 13'h0c: wdata_next = 32'h00450008;
-                13'h10: wdata_next = 32'h00004000;
+                13'h10: wdata_next = 32'h00005400;
                 13'h14: wdata_next = 32'h11ff0000;
-                13'h18: wdata_next = 32'h000003f1;
+                13'h18: wdata_next = 32'h0000eff0;
                 13'h1c: wdata_next = 32'ha8c00000;
                 13'h20: wdata_next = 32'hc507010a;
-                13'h24: wdata_next = 32'h2c00c507;
+                13'h24: wdata_next = 32'h4000c507;
                 13'h28: wdata_next = 32'h722f0000;
                 13'h2c: wdata_next = 32'h6f696461;
                 13'h30: wdata_next = 32'h6d757264;
                 13'h34: wdata_next = 32'h692c0000;
-                13'h38: wdata_next = 32'h00696969;
-                13'h3c: wdata_next = 32'h00000000;
-                13'h40: wdata_next = {16'h0000, data[7:0], data[15:8]};
-                13'h44: wdata_next = {16'h0000, data[23:16], data[31:24]};
-                13'h48: wdata_next = {16'h0000, data[39:32], data[47:40]};
-                13'h4c: wdata_next = {16'h0000, data[55:48], data[63:56]};
+                13'h38: wdata_next = 32'h69696969;
+                13'h3c: wdata_next = 32'h00696969;
+                13'h40: wdata_next = 32'h00000000;
+                
+                13'h44: wdata_next = {16'h0000, data[7:0], data[15:8]};
+                13'h48: wdata_next = {16'h0000, data[23:16], data[31:24]};
+                13'h4c: wdata_next = {16'h0000, data[39:32], data[47:40]};
+                13'h50: wdata_next = {16'h0000, data[55:48], data[63:56]};
+                
+                13'h54: wdata_next = {16'h0000, data[71:64], data[79:72]};
+                13'h58: wdata_next = {16'h0000, data[87:80], data[95:88]};
+                13'h5c: wdata_next = {16'h0000, data[103:96], data[111:104]};
+                13'h60: wdata_next = {16'h0000, data[119:112], data[127:120]};
             endcase
 
             if (m_axi_awready & m_axi_wready) begin
-                if (m_axi_awaddr <= 13'h4C) begin
+                if (m_axi_awaddr <= 13'h60) begin
                     awaddr_next = awaddr_reg + 13'h4;
                 end else begin
                     awaddr_next = 13'h07fc;
