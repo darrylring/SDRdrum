@@ -27,7 +27,7 @@
     <Option Name="IPStaticSourceDir" Val="$PPRDIR/test_ad5545_ad7980_eth.ip_user_files/ipstatic"/>
     <Option Name="EnableBDX" Val="FALSE"/>
     <Option Name="DSABoardId" Val="arty"/>
-    <Option Name="WTXSimLaunchSim" Val="13"/>
+    <Option Name="WTXSimLaunchSim" Val="14"/>
     <Option Name="WTModelSimLaunchSim" Val="0"/>
     <Option Name="WTQuestaLaunchSim" Val="0"/>
     <Option Name="WTIesLaunchSim" Val="0"/>
@@ -64,16 +64,16 @@
         <CompFileExtendedInfo CompFileName="channel.bd" FileRelPathName="ip/channel_zero_0/channel_zero_0.xci"/>
         <CompFileExtendedInfo CompFileName="channel.bd" FileRelPathName="ip/channel_concat_0/channel_concat_0.xci"/>
         <CompFileExtendedInfo CompFileName="channel.bd" FileRelPathName="ip/channel_rotate_0/channel_rotate_0.xci"/>
+        <CompFileExtendedInfo CompFileName="channel.bd" FileRelPathName="hdl/channel.hwdef"/>
+        <CompFileExtendedInfo CompFileName="channel.bd" FileRelPathName="hw_handoff/channel_bd.tcl"/>
+        <CompFileExtendedInfo CompFileName="channel.bd" FileRelPathName="hw_handoff/channel.hwh"/>
+        <CompFileExtendedInfo CompFileName="channel.bd" FileRelPathName="channel_ooc.xdc"/>
         <CompFileExtendedInfo CompFileName="channel.bd" FileRelPathName="hdl/channel.v"/>
         <CompFileExtendedInfo CompFileName="channel.bd" FileRelPathName="ip/channel_magnitude_0/channel_magnitude_0.xci"/>
         <CompFileExtendedInfo CompFileName="channel.bd" FileRelPathName="ip/channel_combine_xy_0/channel_combine_xy_0.xci"/>
         <CompFileExtendedInfo CompFileName="channel.bd" FileRelPathName="ip/channel_translate_0/channel_translate_0.xci"/>
         <CompFileExtendedInfo CompFileName="channel.bd" FileRelPathName="ip/channel_y_cic_filter_0/channel_y_cic_filter_0.xci"/>
         <CompFileExtendedInfo CompFileName="channel.bd" FileRelPathName="ip/channel_x_cic_filter_0/channel_x_cic_filter_0.xci"/>
-        <CompFileExtendedInfo CompFileName="channel.bd" FileRelPathName="hdl/channel.hwdef"/>
-        <CompFileExtendedInfo CompFileName="channel.bd" FileRelPathName="hw_handoff/channel_bd.tcl"/>
-        <CompFileExtendedInfo CompFileName="channel.bd" FileRelPathName="hw_handoff/channel.hwh"/>
-        <CompFileExtendedInfo CompFileName="channel.bd" FileRelPathName="channel_ooc.xdc"/>
       </File>
       <File Path="$PPRDIR/../../rtl/ad7980.v">
         <FileInfo>
@@ -95,13 +95,13 @@
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
-        <CompFileExtendedInfo CompFileName="generator.bd" FileRelPathName="ip/generator_one_0/generator_one_0.xci"/>
-        <CompFileExtendedInfo CompFileName="generator.bd" FileRelPathName="ip/generator_rotate_0/generator_rotate_0.xci"/>
         <CompFileExtendedInfo CompFileName="generator.bd" FileRelPathName="hdl/generator.hwdef"/>
         <CompFileExtendedInfo CompFileName="generator.bd" FileRelPathName="hw_handoff/generator_bd.tcl"/>
         <CompFileExtendedInfo CompFileName="generator.bd" FileRelPathName="hw_handoff/generator.hwh"/>
         <CompFileExtendedInfo CompFileName="generator.bd" FileRelPathName="generator_ooc.xdc"/>
         <CompFileExtendedInfo CompFileName="generator.bd" FileRelPathName="hdl/generator.v"/>
+        <CompFileExtendedInfo CompFileName="generator.bd" FileRelPathName="ip/generator_one_0/generator_one_0.xci"/>
+        <CompFileExtendedInfo CompFileName="generator.bd" FileRelPathName="ip/generator_rotate_0/generator_rotate_0.xci"/>
         <CompFileExtendedInfo CompFileName="generator.bd" FileRelPathName="ip/generator_cos_0/generator_cos_0.xci"/>
         <CompFileExtendedInfo CompFileName="generator.bd" FileRelPathName="ip/generator_valid_0/generator_valid_0.xci"/>
       </File>
@@ -144,7 +144,6 @@
       <Filter Type="Constrs"/>
       <File Path="$PPRDIR/../../top/test_ad5545_ad7980_eth.xdc">
         <FileInfo>
-          <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
         </FileInfo>
       </File>
@@ -154,7 +153,7 @@
     </FileSet>
     <FileSet Name="sim_1" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/sim_1">
       <Filter Type="Srcs"/>
-      <File Path="$PSRCDIR/sim_1/new/test_ad5545_ad7980_eth_tb.v">
+      <File Path="$PPRDIR/../../tb/test_ad5545_ad7980_eth_tb.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -170,7 +169,6 @@
         <Option Name="DesignMode" Val="RTL"/>
         <Option Name="TopModule" Val="test_ad5545_ad7980_eth_tb"/>
         <Option Name="TopLib" Val="xil_defaultlib"/>
-        <Option Name="TopAutoSet" Val="TRUE"/>
         <Option Name="TransportPathDelay" Val="0"/>
         <Option Name="TransportIntDelay" Val="0"/>
         <Option Name="SrcSet" Val="sources_1"/>

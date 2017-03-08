@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="test_ad5545_ad7980_eth_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="test_ad5545_ad7980_eth_tb" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="165229800fs"></ZoomStartTime>
+      <ZoomEndTime time="291229801fs"></ZoomEndTime>
+      <Cursor1Time time="490000000fs"></Cursor1Time>
+   </zoom_setting>
+   <WVObjectSize size="46" />
+   <wvobject type="logic" fp_name="/test_ad5545_ad7980_eth_tb/dut/clk_in">
+      <obj_property name="ElementShortName">clk_in</obj_property>
+      <obj_property name="ObjectShortName">clk_in</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/test_ad5545_ad7980_eth_tb/dut/rstn_in">
+      <obj_property name="ElementShortName">rstn_in</obj_property>
+      <obj_property name="ObjectShortName">rstn_in</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/test_ad5545_ad7980_eth_tb/dut/dac_clk">
+      <obj_property name="ElementShortName">dac_clk</obj_property>
+      <obj_property name="ObjectShortName">dac_clk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/test_ad5545_ad7980_eth_tb/dut/dac_data">
+      <obj_property name="ElementShortName">dac_data</obj_property>
+      <obj_property name="ObjectShortName">dac_data</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/test_ad5545_ad7980_eth_tb/dut/dac_ldac">
+      <obj_property name="ElementShortName">dac_ldac</obj_property>
+      <obj_property name="ObjectShortName">dac_ldac</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/test_ad5545_ad7980_eth_tb/dut/dac_cs">
+      <obj_property name="ElementShortName">dac_cs</obj_property>
+      <obj_property name="ObjectShortName">dac_cs</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/test_ad5545_ad7980_eth_tb/dut/adc_clk">
+      <obj_property name="ElementShortName">adc_clk</obj_property>
+      <obj_property name="ObjectShortName">adc_clk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/test_ad5545_ad7980_eth_tb/dut/adc_cnv">
+      <obj_property name="ElementShortName">adc_cnv</obj_property>
+      <obj_property name="ObjectShortName">adc_cnv</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/test_ad5545_ad7980_eth_tb/dut/adc1_data">
+      <obj_property name="ElementShortName">adc1_data</obj_property>
+      <obj_property name="ObjectShortName">adc1_data</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/test_ad5545_ad7980_eth_tb/dut/eth_phy_rxd">
+      <obj_property name="ElementShortName">eth_phy_rxd[3:0]</obj_property>
+      <obj_property name="ObjectShortName">eth_phy_rxd[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/test_ad5545_ad7980_eth_tb/dut/eth_phy_rx_clk">
+      <obj_property name="ElementShortName">eth_phy_rx_clk</obj_property>
+      <obj_property name="ObjectShortName">eth_phy_rx_clk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/test_ad5545_ad7980_eth_tb/dut/eth_phy_rx_dv">
+      <obj_property name="ElementShortName">eth_phy_rx_dv</obj_property>
+      <obj_property name="ObjectShortName">eth_phy_rx_dv</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/test_ad5545_ad7980_eth_tb/dut/eth_phy_rx_er">
+      <obj_property name="ElementShortName">eth_phy_rx_er</obj_property>
+      <obj_property name="ObjectShortName">eth_phy_rx_er</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/test_ad5545_ad7980_eth_tb/dut/eth_phy_txd">
+      <obj_property name="ElementShortName">eth_phy_txd[3:0]</obj_property>
+      <obj_property name="ObjectShortName">eth_phy_txd[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/test_ad5545_ad7980_eth_tb/dut/eth_phy_tx_clk">
+      <obj_property name="ElementShortName">eth_phy_tx_clk</obj_property>
+      <obj_property name="ObjectShortName">eth_phy_tx_clk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/test_ad5545_ad7980_eth_tb/dut/eth_phy_tx_en">
+      <obj_property name="ElementShortName">eth_phy_tx_en</obj_property>
+      <obj_property name="ObjectShortName">eth_phy_tx_en</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/test_ad5545_ad7980_eth_tb/dut/eth_phy_clk">
+      <obj_property name="ElementShortName">eth_phy_clk</obj_property>
+      <obj_property name="ObjectShortName">eth_phy_clk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/test_ad5545_ad7980_eth_tb/dut/eth_phy_rstn">
+      <obj_property name="ElementShortName">eth_phy_rstn</obj_property>
+      <obj_property name="ObjectShortName">eth_phy_rstn</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/test_ad5545_ad7980_eth_tb/dut/eth_phy_crs">
+      <obj_property name="ElementShortName">eth_phy_crs</obj_property>
+      <obj_property name="ObjectShortName">eth_phy_crs</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/test_ad5545_ad7980_eth_tb/dut/eth_phy_col">
+      <obj_property name="ElementShortName">eth_phy_col</obj_property>
+      <obj_property name="ObjectShortName">eth_phy_col</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/test_ad5545_ad7980_eth_tb/dut/eth_phy_mdio">
+      <obj_property name="ElementShortName">eth_phy_mdio</obj_property>
+      <obj_property name="ObjectShortName">eth_phy_mdio</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/test_ad5545_ad7980_eth_tb/dut/eth_phy_mdc">
+      <obj_property name="ElementShortName">eth_phy_mdc</obj_property>
+      <obj_property name="ObjectShortName">eth_phy_mdc</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/test_ad5545_ad7980_eth_tb/dut/clk">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/test_ad5545_ad7980_eth_tb/dut/rstn">
+      <obj_property name="ElementShortName">rstn</obj_property>
+      <obj_property name="ObjectShortName">rstn</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/test_ad5545_ad7980_eth_tb/dut/pmod_clk">
+      <obj_property name="ElementShortName">pmod_clk</obj_property>
+      <obj_property name="ObjectShortName">pmod_clk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/test_ad5545_ad7980_eth_tb/dut/stick_1_phase_ready">
+      <obj_property name="ElementShortName">stick_1_phase_ready</obj_property>
+      <obj_property name="ObjectShortName">stick_1_phase_ready</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/test_ad5545_ad7980_eth_tb/dut/stick_1_phase_data">
+      <obj_property name="ElementShortName">stick_1_phase_data[23:0]</obj_property>
+      <obj_property name="ObjectShortName">stick_1_phase_data[23:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/test_ad5545_ad7980_eth_tb/dut/stick_1_phase_valid">
+      <obj_property name="ElementShortName">stick_1_phase_valid</obj_property>
+      <obj_property name="ObjectShortName">stick_1_phase_valid</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/test_ad5545_ad7980_eth_tb/dut/stick_signal_ready">
+      <obj_property name="ElementShortName">stick_signal_ready</obj_property>
+      <obj_property name="ObjectShortName">stick_signal_ready</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/test_ad5545_ad7980_eth_tb/dut/stick_out_data">
+      <obj_property name="ElementShortName">stick_out_data[31:0]</obj_property>
+      <obj_property name="ObjectShortName">stick_out_data[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/test_ad5545_ad7980_eth_tb/dut/stick_1_signal_valid">
+      <obj_property name="ElementShortName">stick_1_signal_valid</obj_property>
+      <obj_property name="ObjectShortName">stick_1_signal_valid</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/test_ad5545_ad7980_eth_tb/dut/stick_1_signal_data">
+      <obj_property name="ElementShortName">stick_1_signal_data[16:0]</obj_property>
+      <obj_property name="ObjectShortName">stick_1_signal_data[16:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/test_ad5545_ad7980_eth_tb/dut/stick_2_phase_ready">
+      <obj_property name="ElementShortName">stick_2_phase_ready</obj_property>
+      <obj_property name="ObjectShortName">stick_2_phase_ready</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/test_ad5545_ad7980_eth_tb/dut/stick_2_phase_data">
+      <obj_property name="ElementShortName">stick_2_phase_data[23:0]</obj_property>
+      <obj_property name="ObjectShortName">stick_2_phase_data[23:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/test_ad5545_ad7980_eth_tb/dut/stick_2_phase_valid">
+      <obj_property name="ElementShortName">stick_2_phase_valid</obj_property>
+      <obj_property name="ObjectShortName">stick_2_phase_valid</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/test_ad5545_ad7980_eth_tb/dut/stick_2_signal_valid">
+      <obj_property name="ElementShortName">stick_2_signal_valid</obj_property>
+      <obj_property name="ObjectShortName">stick_2_signal_valid</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/test_ad5545_ad7980_eth_tb/dut/stick_2_signal_data">
+      <obj_property name="ElementShortName">stick_2_signal_data[16:0]</obj_property>
+      <obj_property name="ObjectShortName">stick_2_signal_data[16:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/test_ad5545_ad7980_eth_tb/dut/corner_a_data">
+      <obj_property name="ElementShortName">corner_a_data[15:0]</obj_property>
+      <obj_property name="ObjectShortName">corner_a_data[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/test_ad5545_ad7980_eth_tb/dut/corner_a_ready">
+      <obj_property name="ElementShortName">corner_a_ready</obj_property>
+      <obj_property name="ObjectShortName">corner_a_ready</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/test_ad5545_ad7980_eth_tb/dut/dsp_1_a_ready">
+      <obj_property name="ElementShortName">dsp_1_a_ready</obj_property>
+      <obj_property name="ObjectShortName">dsp_1_a_ready</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/test_ad5545_ad7980_eth_tb/dut/dsp_2_a_ready">
+      <obj_property name="ElementShortName">dsp_2_a_ready</obj_property>
+      <obj_property name="ObjectShortName">dsp_2_a_ready</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/test_ad5545_ad7980_eth_tb/dut/magnitude_1_a_data">
+      <obj_property name="ElementShortName">magnitude_1_a_data[15:0]</obj_property>
+      <obj_property name="ObjectShortName">magnitude_1_a_data[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/test_ad5545_ad7980_eth_tb/dut/magnitude_1_a_valid">
+      <obj_property name="ElementShortName">magnitude_1_a_valid</obj_property>
+      <obj_property name="ObjectShortName">magnitude_1_a_valid</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/test_ad5545_ad7980_eth_tb/dut/magnitude_2_a_data">
+      <obj_property name="ElementShortName">magnitude_2_a_data[15:0]</obj_property>
+      <obj_property name="ObjectShortName">magnitude_2_a_data[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/test_ad5545_ad7980_eth_tb/dut/magnitude_2_a_valid">
+      <obj_property name="ElementShortName">magnitude_2_a_valid</obj_property>
+      <obj_property name="ObjectShortName">magnitude_2_a_valid</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/test_ad5545_ad7980_eth_tb/dut/corner_a_valid">
+      <obj_property name="ElementShortName">corner_a_valid</obj_property>
+      <obj_property name="ObjectShortName">corner_a_valid</obj_property>
+   </wvobject>
+</wave_config>
