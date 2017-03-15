@@ -33,6 +33,8 @@ wire        stick_1_signal_ready;
 wire [16:0] stick_1_signal_data;
 wire        stick_1_signal_valid;
 
+reg  [16:0] stick_1_data;
+
 reg         stick_2_phase_ready = 1'b0;
 wire [23:0] stick_2_phase_data;
 wire        stick_2_phase_valid;
@@ -70,7 +72,7 @@ axis_phase_generator #(
     .m_axis_tvalid(stick_2_phase_valid)
 );
 */
-
+/*
 generator stick_1_gen (
     .aclk(clk),
     
@@ -83,6 +85,23 @@ generator stick_1_gen (
     .signal_tready(stick_1_signal_ready)
 );
 
+always @(posedge clk) begin
+    if (~reset) begin
+        stick_1_data = 24'b0;
+    end else begin
+        if (stick_1_signal_valid) begin
+            stick_1_data = stick_1_signal_data;
+            / *
+            if (stick_1_signal_data[16:0] == 17'h8000) begin
+                stick_1_data[15:0] = 16'hFFFF;
+            end else begin
+                stick_1_data[15:0] = {~stick_1_signal_data[15], stick_1_signal_data[14:0]};
+            end
+            * /
+        end
+    end
+end
+*/
 /*
 generator stick_2_gen (
     .aclk(clk),
@@ -111,9 +130,9 @@ channel corner_dsp_1_a (
     .phase_tready(),
     .phase_tvalid(stick_1_phase_valid),
     
-    .samples_tdata(stick_1_signal_data),
+    .samples_tdata({7'b0, 2'b11, 15'b0} /*stick_1_signal_data*/ /*{{7{1'b0}}, {2{~stick_1_data[15]}}, stick_1_data[14:0]}*/ ),
     .samples_tready(stick_1_signal_ready),
-    .samples_tvalid(stick_1_signal_valid),
+    .samples_tvalid(1'b1), /*stick_1_signal_valid*/
     
     .magnitude_tdata(magnitude_1_a_data),
     .magnitude_tvalid(magnitude_1_a_valid)

@@ -1,31 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Product Version: Vivado v2016.1 (64-bit)              -->
+<!-- Product Version: Vivado v2016.4 (64-bit)              -->
 <!--                                                         -->
 <!-- Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="12" Path="/home/darryl/Projects/radiodrum/fpga/vivado/test_dsp/test_dsp.xpr">
+<Project Version="7" Minor="17" Path="D:/Vivado/SDRdrum/fpga/vivado/test_dsp/test_dsp.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="88659b0c8de940d980447704dbe623b9"/>
     <Option Name="Part" Val="xc7a35ticsg324-1L"/>
     <Option Name="CompiledLibDir" Val="$PCACHEDIR/compile_simlib"/>
     <Option Name="CompiledLibDirXSim" Val=""/>
-    <Option Name="CompiledLibDirModelSim" Val="/home/darryl/Projects/radiodrum/fpga/vivado/test_dsp/test_dsp.cache/compile_simlib/modelsim"/>
-    <Option Name="CompiledLibDirQuesta" Val="/home/darryl/Projects/radiodrum/fpga/vivado/test_dsp/test_dsp.cache/compile_simlib/questa"/>
-    <Option Name="CompiledLibDirIES" Val="/home/darryl/Projects/radiodrum/fpga/vivado/test_dsp/test_dsp.cache/compile_simlib/ies"/>
-    <Option Name="CompiledLibDirVCS" Val="/home/darryl/Projects/radiodrum/fpga/vivado/test_dsp/test_dsp.cache/compile_simlib/vcs"/>
-    <Option Name="CompiledLibDirRiviera" Val="/home/darryl/Projects/radiodrum/fpga/vivado/test_dsp/test_dsp.cache/compile_simlib/riviera"/>
-    <Option Name="CompiledLibDirActivehdl" Val="/home/darryl/Projects/radiodrum/fpga/vivado/test_dsp/test_dsp.cache/compile_simlib/activehdl"/>
+    <Option Name="CompiledLibDirModelSim" Val="$PPRDIR/../../../../home/darryl/Projects/radiodrum/fpga/vivado/test_dsp/test_dsp.cache/compile_simlib/modelsim"/>
+    <Option Name="CompiledLibDirQuesta" Val="$PPRDIR/../../../../home/darryl/Projects/radiodrum/fpga/vivado/test_dsp/test_dsp.cache/compile_simlib/questa"/>
+    <Option Name="CompiledLibDirIES" Val="$PPRDIR/../../../../home/darryl/Projects/radiodrum/fpga/vivado/test_dsp/test_dsp.cache/compile_simlib/ies"/>
+    <Option Name="CompiledLibDirVCS" Val="$PPRDIR/../../../../home/darryl/Projects/radiodrum/fpga/vivado/test_dsp/test_dsp.cache/compile_simlib/vcs"/>
+    <Option Name="CompiledLibDirRiviera" Val="$PPRDIR/../../../../home/darryl/Projects/radiodrum/fpga/vivado/test_dsp/test_dsp.cache/compile_simlib/riviera"/>
+    <Option Name="CompiledLibDirActivehdl" Val="$PPRDIR/../../../../home/darryl/Projects/radiodrum/fpga/vivado/test_dsp/test_dsp.cache/compile_simlib/activehdl"/>
     <Option Name="BoardPart" Val="digilentinc.com:arty:part0:1.1"/>
     <Option Name="ActiveSimSet" Val="sim_1"/>
     <Option Name="DefaultLib" Val="xil_defaultlib"/>
+    <Option Name="IPCachePermission" Val="disable"/>
     <Option Name="EnableCoreContainer" Val="FALSE"/>
     <Option Name="CreateRefXciForCoreContainers" Val="FALSE"/>
     <Option Name="IPUserFilesDir" Val="$PPRDIR/test_dsp.ip_user_files"/>
     <Option Name="IPStaticSourceDir" Val="$PPRDIR/test_dsp.ip_user_files/ipstatic"/>
     <Option Name="EnableBDX" Val="FALSE"/>
     <Option Name="DSABoardId" Val="arty"/>
-    <Option Name="WTXSimLaunchSim" Val="21"/>
+    <Option Name="DSANumComputeUnits" Val="16"/>
+    <Option Name="WTXSimLaunchSim" Val="40"/>
     <Option Name="WTModelSimLaunchSim" Val="0"/>
     <Option Name="WTQuestaLaunchSim" Val="0"/>
     <Option Name="WTIesLaunchSim" Val="0"/>
@@ -40,6 +42,10 @@
     <Option Name="WTRivieraExportSim" Val="2"/>
     <Option Name="WTActivehdlExportSim" Val="2"/>
     <Option Name="GenerateIPUpgradeLog" Val="TRUE"/>
+    <Option Name="XSimRadix" Val="hex"/>
+    <Option Name="XSimTimeUnit" Val="ns"/>
+    <Option Name="XSimArrayDisplayLimit" Val="64"/>
+    <Option Name="XSimTraceLimit" Val="65536"/>
   </Configuration>
   <FileSets Version="1" Minor="31">
     <FileSet Name="sources_1" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
@@ -58,14 +64,14 @@
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
-        <CompFileExtendedInfo CompFileName="generator.bd" FileRelPathName="ip/generator_one_0/generator_one_0.xci"/>
-        <CompFileExtendedInfo CompFileName="generator.bd" FileRelPathName="ip/generator_valid_0/generator_valid_0.xci"/>
-        <CompFileExtendedInfo CompFileName="generator.bd" FileRelPathName="ip/generator_cos_0/generator_cos_0.xci"/>
-        <CompFileExtendedInfo CompFileName="generator.bd" FileRelPathName="hdl/generator.v"/>
-        <CompFileExtendedInfo CompFileName="generator.bd" FileRelPathName="generator_ooc.xdc"/>
-        <CompFileExtendedInfo CompFileName="generator.bd" FileRelPathName="hw_handoff/generator.hwh"/>
-        <CompFileExtendedInfo CompFileName="generator.bd" FileRelPathName="hw_handoff/generator_bd.tcl"/>
         <CompFileExtendedInfo CompFileName="generator.bd" FileRelPathName="hdl/generator.hwdef"/>
+        <CompFileExtendedInfo CompFileName="generator.bd" FileRelPathName="hw_handoff/generator_bd.tcl"/>
+        <CompFileExtendedInfo CompFileName="generator.bd" FileRelPathName="hw_handoff/generator.hwh"/>
+        <CompFileExtendedInfo CompFileName="generator.bd" FileRelPathName="generator_ooc.xdc"/>
+        <CompFileExtendedInfo CompFileName="generator.bd" FileRelPathName="hdl/generator.v"/>
+        <CompFileExtendedInfo CompFileName="generator.bd" FileRelPathName="ip/generator_cos_0/generator_cos_0.xci"/>
+        <CompFileExtendedInfo CompFileName="generator.bd" FileRelPathName="ip/generator_valid_0/generator_valid_0.xci"/>
+        <CompFileExtendedInfo CompFileName="generator.bd" FileRelPathName="ip/generator_one_0/generator_one_0.xci"/>
         <CompFileExtendedInfo CompFileName="generator.bd" FileRelPathName="ip/generator_rotate_0/generator_rotate_0.xci"/>
       </File>
       <File Path="$PPRDIR/../../bd/channel/channel.bd">
@@ -75,21 +81,21 @@
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
-        <CompFileExtendedInfo CompFileName="channel.bd" FileRelPathName="ip/channel_rotate_0/channel_rotate_0.xci"/>
-        <CompFileExtendedInfo CompFileName="channel.bd" FileRelPathName="ip/channel_concat_0/channel_concat_0.xci"/>
-        <CompFileExtendedInfo CompFileName="channel.bd" FileRelPathName="ip/channel_zero_0/channel_zero_0.xci"/>
-        <CompFileExtendedInfo CompFileName="channel.bd" FileRelPathName="ip/channel_x_0/channel_x_0.xci"/>
-        <CompFileExtendedInfo CompFileName="channel.bd" FileRelPathName="ip/channel_y_0/channel_y_0.xci"/>
-        <CompFileExtendedInfo CompFileName="channel.bd" FileRelPathName="ip/channel_x_cic_filter_0/channel_x_cic_filter_0.xci"/>
-        <CompFileExtendedInfo CompFileName="channel.bd" FileRelPathName="ip/channel_y_cic_filter_0/channel_y_cic_filter_0.xci"/>
-        <CompFileExtendedInfo CompFileName="channel.bd" FileRelPathName="ip/channel_translate_0/channel_translate_0.xci"/>
-        <CompFileExtendedInfo CompFileName="channel.bd" FileRelPathName="ip/channel_combine_xy_0/channel_combine_xy_0.xci"/>
-        <CompFileExtendedInfo CompFileName="channel.bd" FileRelPathName="ip/channel_magnitude_0/channel_magnitude_0.xci"/>
-        <CompFileExtendedInfo CompFileName="channel.bd" FileRelPathName="hdl/channel.v"/>
         <CompFileExtendedInfo CompFileName="channel.bd" FileRelPathName="channel_ooc.xdc"/>
         <CompFileExtendedInfo CompFileName="channel.bd" FileRelPathName="hw_handoff/channel.hwh"/>
-        <CompFileExtendedInfo CompFileName="channel.bd" FileRelPathName="hw_handoff/channel_bd.tcl"/>
+        <CompFileExtendedInfo CompFileName="channel.bd" FileRelPathName="ip/channel_x_cic_filter_0/channel_x_cic_filter_0.xci"/>
+        <CompFileExtendedInfo CompFileName="channel.bd" FileRelPathName="ip/channel_rotate_0/channel_rotate_0.xci"/>
         <CompFileExtendedInfo CompFileName="channel.bd" FileRelPathName="hdl/channel.hwdef"/>
+        <CompFileExtendedInfo CompFileName="channel.bd" FileRelPathName="ip/channel_magnitude_0/channel_magnitude_0.xci"/>
+        <CompFileExtendedInfo CompFileName="channel.bd" FileRelPathName="ip/channel_y_cic_filter_0/channel_y_cic_filter_0.xci"/>
+        <CompFileExtendedInfo CompFileName="channel.bd" FileRelPathName="ip/channel_translate_0/channel_translate_0.xci"/>
+        <CompFileExtendedInfo CompFileName="channel.bd" FileRelPathName="ip/channel_y_0/channel_y_0.xci"/>
+        <CompFileExtendedInfo CompFileName="channel.bd" FileRelPathName="hw_handoff/channel_bd.tcl"/>
+        <CompFileExtendedInfo CompFileName="channel.bd" FileRelPathName="hdl/channel.v"/>
+        <CompFileExtendedInfo CompFileName="channel.bd" FileRelPathName="ip/channel_combine_xy_0/channel_combine_xy_0.xci"/>
+        <CompFileExtendedInfo CompFileName="channel.bd" FileRelPathName="ip/channel_x_0/channel_x_0.xci"/>
+        <CompFileExtendedInfo CompFileName="channel.bd" FileRelPathName="ip/channel_zero_0/channel_zero_0.xci"/>
+        <CompFileExtendedInfo CompFileName="channel.bd" FileRelPathName="ip/channel_concat_0/channel_concat_0.xci"/>
       </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
@@ -139,14 +145,11 @@
     <Simulator Name="Questa">
       <Option Name="Description" Val="Questa Advanced Simulator"/>
     </Simulator>
-    <Simulator Name="IES">
-      <Option Name="Description" Val="Incisive Enterprise Simulator (IES)"/>
-    </Simulator>
-    <Simulator Name="VCS">
-      <Option Name="Description" Val="Verilog Compiler Simulator (VCS)"/>
-    </Simulator>
     <Simulator Name="Riviera">
       <Option Name="Description" Val="Riviera-PRO Simulator"/>
+    </Simulator>
+    <Simulator Name="ActiveHDL">
+      <Option Name="Description" Val="Active-HDL Simulator"/>
     </Simulator>
   </Simulators>
   <Runs Version="1" Minor="10">
@@ -155,6 +158,7 @@
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016"/>
         <Step Id="synth_design"/>
       </Strategy>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
     <Run Id="impl_1" Type="Ft2:EntireDesign" Part="xc7a35ticsg324-1L" ConstrsSet="constrs_1" Description="Default settings for Implementation." State="current" SynthRun="synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
@@ -169,6 +173,7 @@
         <Step Id="post_route_phys_opt_design"/>
         <Step Id="write_bitstream"/>
       </Strategy>
+      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
   </Runs>
 </Project>

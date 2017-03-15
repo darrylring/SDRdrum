@@ -18,8 +18,8 @@ module axis_phase_generator #
   output wire                        m_axis_tvalid
 );
 
-  reg [PHASE_WIDTH-1:0] int_cntr_reg, int_cntr_next;
-  reg int_enbl_reg, int_enbl_next;
+  reg [PHASE_WIDTH-1:0] int_cntr_reg = 0, int_cntr_next;
+  reg int_enbl_reg = 1'b0, int_enbl_next;
 
   always @(posedge aclk)
   begin

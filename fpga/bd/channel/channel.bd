@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<bd:repository xmlns:bd="http://www.xilinx.com/bd" bd:isValidated="true" bd:synthFlowMode="None" bd:tool_version="2016.1" bd:top="channel" bd:version="1.00.a">
+<bd:repository xmlns:bd="http://www.xilinx.com/bd" bd:BoundaryCRC="0xB790D4AF9006C5C2" bd:device="xc7a35ticsg324-1L" bd:isValidated="true" bd:synthFlowMode="None" bd:tool_version="2016.4" bd:top="channel" bd:version="1.00.a">
 
   <spirit:component xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009">
     <spirit:vendor>xilinx.com</spirit:vendor>
@@ -436,7 +436,7 @@
           <spirit:configurableElementValue spirit:referenceId="Pipelining_Mode">Maximum</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="Phase_Format">Scaled_Radians</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="Input_Width">17</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="Output_Width">16</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Output_Width">17</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="Round_Mode">Round_Pos_Neg_Inf</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="Compensation_Scaling">Embedded_Multiplier</spirit:configurableElementValue>
         </spirit:configurableElementValues>
@@ -462,8 +462,10 @@
         <spirit:componentRef spirit:library="ip" spirit:name="xlslice" spirit:vendor="xilinx.com" spirit:version="1.0"/>
         <spirit:configurableElementValues>
           <spirit:configurableElementValue spirit:referenceId="bd:xciName">channel_x_0</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="DOUT_WIDTH">16</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="DIN_FROM">15</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="DOUT_WIDTH">24</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="DIN_TO">0</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="DIN_FROM">23</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="DIN_WIDTH">48</spirit:configurableElementValue>
         </spirit:configurableElementValues>
       </spirit:componentInstance>
       <spirit:componentInstance>
@@ -471,9 +473,10 @@
         <spirit:componentRef spirit:library="ip" spirit:name="xlslice" spirit:vendor="xilinx.com" spirit:version="1.0"/>
         <spirit:configurableElementValues>
           <spirit:configurableElementValue spirit:referenceId="bd:xciName">channel_y_0</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="DOUT_WIDTH">16</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="DIN_TO">16</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="DIN_FROM">31</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="DOUT_WIDTH">24</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="DIN_TO">24</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="DIN_FROM">47</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="DIN_WIDTH">48</spirit:configurableElementValue>
         </spirit:configurableElementValues>
       </spirit:componentInstance>
       <spirit:componentInstance>
@@ -484,15 +487,16 @@
           <spirit:configurableElementValue spirit:referenceId="Filter_Type">Decimation</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="Differential_Delay">1</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="Number_Of_Channels">1</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="Fixed_Or_Initial_Rate">1000</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="Minimum_Rate">1000</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="Maximum_Rate">1000</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Fixed_Or_Initial_Rate">1024</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Minimum_Rate">1024</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Maximum_Rate">1024</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="Input_Sample_Frequency">1</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="Clock_Frequency">100</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="SamplePeriod">1</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="Input_Data_Width">16</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Input_Data_Width">17</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="Quantization">Full_Precision</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="Output_Data_Width">46</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Output_Data_Width">47</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Use_Xtreme_DSP_Slice">false</spirit:configurableElementValue>
         </spirit:configurableElementValues>
       </spirit:componentInstance>
       <spirit:componentInstance>
@@ -503,15 +507,16 @@
           <spirit:configurableElementValue spirit:referenceId="Filter_Type">Decimation</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="Differential_Delay">1</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="Number_Of_Channels">1</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="Fixed_Or_Initial_Rate">1000</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="Minimum_Rate">1000</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="Maximum_Rate">1000</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Fixed_Or_Initial_Rate">1024</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Minimum_Rate">1024</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Maximum_Rate">1024</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="Input_Sample_Frequency">1</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="Clock_Frequency">100</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="SamplePeriod">1</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="Input_Data_Width">16</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Input_Data_Width">17</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="Quantization">Full_Precision</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="Output_Data_Width">46</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Output_Data_Width">47</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Use_Xtreme_DSP_Slice">false</spirit:configurableElementValue>
         </spirit:configurableElementValues>
       </spirit:componentInstance>
       <spirit:componentInstance>
@@ -524,8 +529,8 @@
           <spirit:configurableElementValue spirit:referenceId="Pipelining_Mode">Maximum</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="Data_Format">SignedFraction</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="Phase_Format">Scaled_Radians</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="Input_Width">46</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="Output_Width">16</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Input_Width">47</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Output_Width">24</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="Round_Mode">Round_Pos_Neg_Inf</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="Compensation_Scaling">Embedded_Multiplier</spirit:configurableElementValue>
         </spirit:configurableElementValues>
@@ -544,7 +549,9 @@
         <spirit:configurableElementValues>
           <spirit:configurableElementValue spirit:referenceId="bd:xciName">channel_magnitude_0</spirit:configurableElementValue>
           <spirit:configurableElementValue spirit:referenceId="DOUT_WIDTH">16</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="DIN_FROM">15</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="DIN_TO">8</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="DIN_FROM">23</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="DIN_WIDTH">48</spirit:configurableElementValue>
         </spirit:configurableElementValues>
       </spirit:componentInstance>
     </spirit:componentInstances>
