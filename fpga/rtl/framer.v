@@ -89,8 +89,17 @@ always @* begin
             awaddr_next = 13'h07f4;
             wdata_next = 32'h0062;
             
-            if (m_axi_awready & m_axi_wready) begin
-                if (m_axi_awvalid & m_axi_wvalid) begin
+            if (m_axi_awready) begin
+                if (m_axi_awvalid) begin
+                    awvalid_next = 1'b0;
+                    wvalid_next = 1'b1;
+                end
+            end else begin
+                if (!m_axi_wvalid) awvalid_next = 1'b1;
+            end
+            
+            if (m_axi_wready) begin
+                if (m_axi_wvalid) begin
                     awaddr_next = 13'b0;
                     awvalid_next = 1'b0;
                     wvalid_next = 1'b0;
@@ -100,8 +109,6 @@ always @* begin
                     state_next = STATE_INIT;
                 end
             end else begin
-                awvalid_next = 1'b1;
-                wvalid_next = 1'b1;
                 state_next = STATE_INIT;
             end
         end
@@ -110,10 +117,12 @@ always @* begin
                 data_next = s_axis_tdata;
                 tready_next = 1'b0;
                 awaddr_next = 13'b0;
-
+                awvalid_next = 1'b1;
+                rready_next = 1'b0;
                 state_next = STATE_WRITE_FRAME;
             end else begin
                 tready_next = 1'b1;
+                rready_next = 1'b1;
 
                 state_next = STATE_IDLE;
             end
@@ -151,32 +160,51 @@ always @* begin
                 13'h60: wdata_next = {16'h0000, data[119:112], data[127:120]};
             endcase
 
-            if (m_axi_awready & m_axi_wready) begin
+            if (m_axi_awready) begin
+                if (m_axi_awvalid) begin
+                    awvalid_next = 1'b0;
+                    wvalid_next = 1'b1;
+                end
+            end
+        
+            if (m_axi_wready) begin
                 if (m_axi_awaddr <= 13'h60) begin
                     awaddr_next = awaddr_reg + 13'h4;
+                    awvalid_next = 1'b1;
+                    wvalid_next = 1'b0;
                 end else begin
                     awaddr_next = 13'h07fc;
-                    awvalid_next = 1'b0;
+                    awvalid_next = 1'b1;
                     wvalid_next = 1'b0;
                     state_next = STATE_TX_FRAME;
                 end
             end else begin
-                awvalid_next = 1'b1;
                 wvalid_next = 1'b1;
             end
         end
         STATE_TX_FRAME: begin
             wdata_next = 32'h0009;
             
-            if (m_axi_awready & m_axi_wready) begin
-                awaddr_next = 13'b0;
-                wdata_next = 32'b0;
-                awvalid_next = 1'b0;
-                wvalid_next = 1'b0;
-                state_next = STATE_WAIT_DONE;
+            if (m_axi_awready) begin
+                if (m_axi_awvalid) begin
+                    awvalid_next = 1'b0;
+                    wvalid_next = 1'b1;
+                end
             end else begin
-                awvalid_next = 1'b1;
-                wvalid_next = 1'b1;
+                if (!m_axi_wvalid) awvalid_next = 1'b1;
+            end
+            
+            if (m_axi_wready) begin
+                if (m_axi_wvalid) begin
+                    awaddr_next = 13'b0;
+                    awvalid_next = 1'b0;
+                    wvalid_next = 1'b0;
+                    wdata_next = 32'b0;
+                    state_next = STATE_WAIT_DONE;
+                end else begin
+                    state_next = STATE_TX_FRAME;
+                end
+            end else begin
                 state_next = STATE_TX_FRAME;
             end
         end
@@ -184,8 +212,6 @@ always @* begin
             if (m_axi_rvalid) begin
                 if (m_axi_rdata == 32'h08) begin
                     arvalid_next = 1'b0;
-                    rready_next = 1'b0;
-                    
                     state_next = STATE_IDLE;
                 end else begin
                     state_next = STATE_WAIT_DONE;

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="sdrdrum_arty_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="ipif_pkg" />
+            <top_module name="lib_pkg" />
+            <top_module name="lmb_bram_if_funcs" />
+            <top_module name="mac_pkg" />
+            <top_module name="mdm_funcs" />
+            <top_module name="sdrdrum_arty_tb" />
+            <top_module name="tc_types" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="10737500000fs"></ZoomStartTime>
+      <ZoomEndTime time="15252500001fs"></ZoomEndTime>
+      <Cursor1Time time="14500000000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="257"></NameColumnWidth>
+      <ValueColumnWidth column_width="50"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="8" />
+   <wvobject fp_name="/sdrdrum_arty_tb/dut/stick_1_signal_valid" type="logic">
+      <obj_property name="ElementShortName">stick_1_signal_valid</obj_property>
+      <obj_property name="ObjectShortName">stick_1_signal_valid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sdrdrum_arty_tb/dut/stick_1_signal_data" type="array">
+      <obj_property name="ElementShortName">stick_1_signal_data[16:0]</obj_property>
+      <obj_property name="ObjectShortName">stick_1_signal_data[16:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sdrdrum_arty_tb/dut/stick_2_signal_valid" type="logic">
+      <obj_property name="ElementShortName">stick_2_signal_valid</obj_property>
+      <obj_property name="ObjectShortName">stick_2_signal_valid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sdrdrum_arty_tb/dut/stick_2_signal_data" type="array">
+      <obj_property name="ElementShortName">stick_2_signal_data[16:0]</obj_property>
+      <obj_property name="ObjectShortName">stick_2_signal_data[16:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sdrdrum_arty_tb/dut/stick_dac_out/cs" type="logic">
+      <obj_property name="ElementShortName">cs</obj_property>
+      <obj_property name="ObjectShortName">cs</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sdrdrum_arty_tb/dut/stick_dac_out/din" type="logic">
+      <obj_property name="ElementShortName">din</obj_property>
+      <obj_property name="ObjectShortName">din</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sdrdrum_arty_tb/dut/stick_dac_out/ldac" type="logic">
+      <obj_property name="ElementShortName">ldac</obj_property>
+      <obj_property name="ObjectShortName">ldac</obj_property>
+   </wvobject>
+   <wvobject fp_name="/sdrdrum_arty_tb/dut/stick_dac_out/sclk" type="logic">
+      <obj_property name="ElementShortName">sclk</obj_property>
+      <obj_property name="ObjectShortName">sclk</obj_property>
+   </wvobject>
+</wave_config>
