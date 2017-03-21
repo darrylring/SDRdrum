@@ -6,7 +6,7 @@ module framer (
     input  wire        aresetn,
     
     // Input data stream
-    input  wire [127:0] s_axis_tdata,
+    input  wire [255:0] s_axis_tdata,
     input  wire         s_axis_tvalid,
     output wire         s_axis_tready,
 
@@ -41,8 +41,8 @@ localparam [2:0]
     STATE_TX_FRAME    = 3'd3,
     STATE_WAIT_DONE   = 3'd4;
 
-reg [127:0] data;
-reg [127:0] data_next;
+reg [255:0] data;
+reg [255:0] data_next;
 
 reg  [2:0] state;
 reg  [2:0] state_next;
@@ -147,17 +147,17 @@ always @* begin
                 13'h34: wdata_next = 32'h692c0000;
                 13'h38: wdata_next = 32'h69696969;
                 13'h3c: wdata_next = 32'h00696969;
-                13'h40: wdata_next = 32'h00000000;
                 
-                13'h44: wdata_next = {16'h0000, data[7:0], data[15:8]};
-                13'h48: wdata_next = {16'h0000, data[23:16], data[31:24]};
-                13'h4c: wdata_next = {16'h0000, data[39:32], data[47:40]};
-                13'h50: wdata_next = {16'h0000, data[55:48], data[63:56]};
+                13'h40: wdata_next = {data[23:16], data[31:24], 16'h0000};
+                13'h44: wdata_next = {data[55:48], data[63:56], data[7:0], data[15:8]};
+                13'h48: wdata_next = {data[87:80], data[95:88], data[39:32], data[47:40]};
+                13'h4c: wdata_next = {data[119:112], data[127:120], data[71:64], data[79:72]};
+                13'h50: wdata_next = {data[151:144], data[159:152], data[103:96], data[111:104]};
                 
-                13'h54: wdata_next = {16'h0000, data[71:64], data[79:72]};
-                13'h58: wdata_next = {16'h0000, data[87:80], data[95:88]};
-                13'h5c: wdata_next = {16'h0000, data[103:96], data[111:104]};
-                13'h60: wdata_next = {16'h0000, data[119:112], data[127:120]};
+                13'h54: wdata_next = {data[183:176], data[191:184], data[135:128], data[143:136]};
+                13'h58: wdata_next = {data[215:208], data[223:216], data[167:160], data[175:168]};
+                13'h5c: wdata_next = {data[247:240], data[255:248], data[199:192], data[207:200]};
+                13'h60: wdata_next = {16'h0000, data[231:224], data[239:232]};
             endcase
 
             if (m_axi_awready) begin

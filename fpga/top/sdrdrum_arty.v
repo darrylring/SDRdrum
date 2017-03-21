@@ -102,7 +102,7 @@ axis_phase_generator #(
     .aclk(clk),
     .aresetn(resetn),
     
-    .cfg_data(13'h0EB8),
+    .cfg_data(13'h0EB8), // 115000 hz
     
     .m_axis_tready(stick_1_phase_ready),
     .m_axis_tdata(stick_1_phase_data),
@@ -116,7 +116,7 @@ axis_phase_generator #(
     .aclk(clk),
     .aresetn(resetn),
     
-    .cfg_data(13'h0D71),
+    .cfg_data(13'h1008), // 125240 hz
     
     .m_axis_tready(stick_2_phase_ready),
     .m_axis_tdata(stick_2_phase_data),
@@ -199,14 +199,14 @@ wire dsp_b_ready;
 wire dsp_c_ready;
 wire dsp_d_ready;
 
-wire [15:0] magnitude_1_a_data;
-wire [15:0] magnitude_1_b_data;
-wire [15:0] magnitude_1_c_data;
-wire [15:0] magnitude_1_d_data;
-wire [15:0] magnitude_2_a_data;
-wire [15:0] magnitude_2_b_data;
-wire [15:0] magnitude_2_c_data;
-wire [15:0] magnitude_2_d_data;
+wire [31:0] magnitude_1_a_data;
+wire [31:0] magnitude_1_b_data;
+wire [31:0] magnitude_1_c_data;
+wire [31:0] magnitude_1_d_data;
+wire [31:0] magnitude_2_a_data;
+wire [31:0] magnitude_2_b_data;
+wire [31:0] magnitude_2_c_data;
+wire [31:0] magnitude_2_d_data;
 
 wire magnitude_1_a_valid;
 wire magnitude_1_b_valid;
