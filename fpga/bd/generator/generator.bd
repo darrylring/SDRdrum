@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<bd:repository xmlns:bd="http://www.xilinx.com/bd" bd:BoundaryCRC="0xED1B59F967D9B2A8" bd:device="xc7a35ticsg324-1L" bd:isValidated="true" bd:synthFlowMode="None" bd:tool_version="2016.4" bd:top="generator" bd:version="1.00.a">
+<bd:repository xmlns:bd="http://www.xilinx.com/bd" bd:BoundaryCRC="0xED1B59F967D9B2A8" bd:device="xc7a35ticsg324-1L" bd:isValidated="true" bd:synthFlowMode="None" bd:tool_version="2017.4" bd:top="generator" bd:version="1.00.a">
 
   <spirit:component xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009">
     <spirit:vendor>xilinx.com</spirit:vendor>
@@ -307,20 +307,14 @@
     <spirit:version>1.00.a</spirit:version>
     <spirit:componentInstances>
       <spirit:componentInstance>
-        <spirit:instanceName>rotate</spirit:instanceName>
-        <spirit:componentRef spirit:library="ip" spirit:name="cordic" spirit:vendor="xilinx.com" spirit:version="6.0"/>
+        <spirit:instanceName>cos</spirit:instanceName>
+        <spirit:componentRef spirit:library="ip" spirit:name="xlslice" spirit:vendor="xilinx.com" spirit:version="1.0"/>
         <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">generator_rotate_0</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="Architectural_Configuration">Word_Serial</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="Pipelining_Mode">Maximum</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="Phase_Format">Scaled_Radians</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="Input_Width">17</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="Output_Width">17</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="Round_Mode">Round_Pos_Neg_Inf</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="Compensation_Scaling">Embedded_Multiplier</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="flow_control">Blocking</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="out_tready">true</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="ARESETN">true</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">generator_cos_0</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="DIN_TO">0</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="DIN_FROM">16</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="DIN_WIDTH">48</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="DOUT_WIDTH">17</spirit:configurableElementValue>
         </spirit:configurableElementValues>
       </spirit:componentInstance>
       <spirit:componentInstance>
@@ -342,14 +336,20 @@
         </spirit:configurableElementValues>
       </spirit:componentInstance>
       <spirit:componentInstance>
-        <spirit:instanceName>cos</spirit:instanceName>
-        <spirit:componentRef spirit:library="ip" spirit:name="xlslice" spirit:vendor="xilinx.com" spirit:version="1.0"/>
+        <spirit:instanceName>rotate</spirit:instanceName>
+        <spirit:componentRef spirit:library="ip" spirit:name="cordic" spirit:vendor="xilinx.com" spirit:version="6.0"/>
         <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">generator_cos_0</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="DOUT_WIDTH">17</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="DIN_TO">0</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="DIN_FROM">16</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="DIN_WIDTH">48</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="bd:xciName">generator_rotate_0</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Architectural_Configuration">Word_Serial</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Pipelining_Mode">Maximum</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Phase_Format">Scaled_Radians</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Input_Width">17</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Output_Width">17</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Round_Mode">Round_Pos_Neg_Inf</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="Compensation_Scaling">Embedded_Multiplier</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="flow_control">Blocking</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="out_tready">true</spirit:configurableElementValue>
+          <spirit:configurableElementValue spirit:referenceId="ARESETN">true</spirit:configurableElementValue>
         </spirit:configurableElementValues>
       </spirit:componentInstance>
     </spirit:componentInstances>

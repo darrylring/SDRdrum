@@ -56,6 +56,9 @@ module sdrdrum_arty (
 wire [15:0] control;
 wire [23:0] status;
 
+wire [12:0] freq_1;
+wire [12:0] freq_2;
+
 
 //==============================================================================
 // Clock Generator
@@ -102,7 +105,7 @@ axis_phase_generator #(
     .aclk(clk),
     .aresetn(resetn),
     
-    .cfg_data(13'h0EB8), // 115000 hz
+    .cfg_data(freq_1),
     
     .m_axis_tready(stick_1_phase_ready),
     .m_axis_tdata(stick_1_phase_data),
@@ -116,7 +119,7 @@ axis_phase_generator #(
     .aclk(clk),
     .aresetn(resetn),
     
-    .cfg_data(13'h1008), // 125240 hz
+    .cfg_data(freq_2),
     
     .m_axis_tready(stick_2_phase_ready),
     .m_axis_tdata(stick_2_phase_data),
@@ -511,7 +514,10 @@ controller controller (
     .rgb_leds(rgb_leds),
     
     .control(control),
-    .status(status)
+    .status(status),
+    
+    .freq_1_tri_o(freq_1),
+    .freq_2_tri_o(freq_2)
 );
 
 endmodule
