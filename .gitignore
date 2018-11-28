@@ -14,16 +14,14 @@ reports/*
 !reports/*.png
 !reports/*.tex
 
-
 # FPGA
-.Xil/
-*.cache/
-*.hw/
-*.ip_user_files/
-*.runs/
-*.sdk/
-*.sim/
-*.jou
-*.log
-*.str
-
+fpga/bd/channel/*
+!fpga/bd/channel/channel.bd
+fpga/bd/controller/*
+!fpga/bd/controller/controller.bd
+fpga/bd/generator/*
+!fpga/bd/generator/generator.bd
+fpga/ip/xlnx_clk_gen_pmod_eth/*
+!fpga/ip/xlnx_clk_gen_pmod_eth/xlnx_clk_gen_pmod_eth.xci
+fpga/vivado/*
+!fpga/vivado/*.tcl
