@@ -28,7 +28,7 @@ DItemRevisionGUID=
 ReportSuppressedErrorsInMessages=0
 FSMCodingStyle=eFMSDropDownList_OneProcess
 FSMEncodingStyle=eFMSDropDownList_OneHot
-OutputPath=
+OutputPath=Project Outputs for SDRdrum_Arty_RevB
 LogFolderPath=
 ManagedProjectGUID=
 IncludeDesignInRelease=0
@@ -258,18 +258,6 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=NIFCAJVR
 
-[GeneratedDocument1]
-DocumentPath=Project Outputs for SDRdrum_Arty_RevB\Design Rule Check - SDRdrum_Arty_RevB.html
-DItemRevisionGUID=
-
-[GeneratedDocument2]
-DocumentPath=SDRdrum_Arty_RevB 2019-01-27 15-05-25.WAS
-DItemRevisionGUID=
-
-[GeneratedDocument3]
-DocumentPath=SDRdrum_Arty_RevB 2019-01-27 15-10-46.WAS
-DItemRevisionGUID=
-
 [Parameter1]
 Name=ProjectRevision
 Value=B
@@ -321,7 +309,7 @@ SCH_HasExpandLogicalToPhysicalSheets=-1
 SaveSettingsToOutJob=-1
 
 [Generic_EDE]
-OutputDir=
+OutputDir=Project Outputs for SDRdrum_Arty_RevB
 
 [OutputGroup1]
 Name=Netlist Outputs
