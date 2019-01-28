@@ -1,12 +1,15 @@
 #Altium
-History
 __Previews
+History
+Project Logs for *
+Project Outputs for *
 *.PrjPCBStructure
 *.PrjPcbStructure
 *.SchDocPreview
 *.PcbDocPreview
-Project Outputs for *
-Project Logs for *
+*.WAS
+debug.log
+Status Report.Txt
 
 reports/*
 !reports/*.eps
