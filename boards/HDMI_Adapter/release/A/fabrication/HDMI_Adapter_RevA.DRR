@@ -1,0 +1,18 @@
+----------------------------------------------------------------------------------------------------------------------------------
+NCDrill File Report For: HDMI_Adapter_RevA.PcbDoc   2019-01-27  20:24:14
+----------------------------------------------------------------------------------------------------------------------------------
+
+Layer Pair : Top Layer to Bottom Layer
+ASCII RoundHoles File : HDMI_Adapter_RevA.TXT
+
+Tool       Hole Size               Hole Tolerance               Hole Type       Hole Count   Plated         Tool Travel
+----------------------------------------------------------------------------------------------------------------------------------
+T1      12mil (0.3mm)                                             Round             8         PTH        0.00inch (0.00mm)
+T2      39mil (1mm)                                               Round             15        PTH        0.00inch (0.00mm)
+T3      59mil (1.5mm)                                             Round             4         PTH        0.00inch (0.00mm)
+T4      63mil (1.6mm)                                             Round             20        PTH        0.00inch (0.00mm)
+T5      120mil (3.05mm)                                           Round             2         PTH        0.00inch (0.00mm)
+----------------------------------------------------------------------------------------------------------------------------------
+Totals                                                                              49
+
+Total Processing Time (hh:mm:ss) : 00:00:00

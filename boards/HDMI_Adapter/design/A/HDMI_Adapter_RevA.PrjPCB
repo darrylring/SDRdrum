@@ -38,6 +38,57 @@ PrefsVaultGUID=
 PrefsRevisionGUID=
 
 [Document1]
+DocumentPath=jobs\BOM.OutJob
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=
+
+[Document2]
+DocumentPath=jobs\Schematic.OutJob
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=
+
+[Document3]
+DocumentPath=jobs\Gerbers.OutJob
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=
+
+[Document4]
 DocumentPath=..\..\..\..\libraries\sdrdrum\SDRdrum.SchLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -54,7 +105,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=NIFCAJVR
 
-[Document2]
+[Document5]
 DocumentPath=..\..\..\..\libraries\sdrdrum\SDRdrum.PcbLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -71,7 +122,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=XSTAIPLO
 
-[Document3]
+[Document6]
 DocumentPath=HDMI_Adapter_RevA.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -88,7 +139,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=TBQKJSPJ
 
-[Document4]
+[Document7]
 DocumentPath=HDMI_Adapter_RevA.PcbDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -105,9 +156,9 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=USNDIWYJ
 
-[GeneratedDocument1]
-DocumentPath=Project Outputs for HDMI_Adapter_RevA\Design Rule Check - HDMI_Adapter_RevA.html
-DItemRevisionGUID=
+[Parameter1]
+Name=ProjectRevision
+Value=A
 
 [Configuration1]
 Name=Sources
@@ -118,6 +169,9 @@ Variant=[No Variations]
 OutputJobsCount=0
 ContentTypeGUID=CB6F2064-E317-11DF-B822-12313F0024A2
 ConfigurationType=Source
+
+[Generic_EDE]
+OutputDir=
 
 [OutputGroup1]
 Name=Netlist Outputs
@@ -712,6 +766,36 @@ OutputName9=Specctra Design PCB
 OutputDocumentPath9=
 OutputVariantName9=
 OutputDefault9=0
+OutputType10=Ansoft Neutral
+OutputName10=Ansoft Neutral (AutoPCB)
+OutputDocumentPath10=
+OutputVariantName10=
+OutputDefault10=0
+OutputType11=HyperLynx
+OutputName11=HyperLynx (AutoPCB)
+OutputDocumentPath11=
+OutputVariantName11=
+OutputDefault11=0
+OutputType12=Orcad v7 Capture Design
+OutputName12=Orcad v7 Capture Design (AutoSCH)
+OutputDocumentPath12=
+OutputVariantName12=
+OutputDefault12=0
+OutputType13=P-CAD ASCII
+OutputName13=P-CAD ASCII (AutoPCB)
+OutputDocumentPath13=
+OutputVariantName13=
+OutputDefault13=0
+OutputType14=P-CAD V16 Schematic Design
+OutputName14=P-CAD V16 Schematic Design (AutoSCH)
+OutputDocumentPath14=
+OutputVariantName14=
+OutputDefault14=0
+OutputType15=SiSoft
+OutputName15=SiSoft (AutoPCB)
+OutputDocumentPath15=
+OutputVariantName15=
+OutputDefault15=0
 
 [OutputGroup10]
 Name=PostProcess Outputs
