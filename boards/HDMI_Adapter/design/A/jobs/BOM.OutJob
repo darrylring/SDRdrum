@@ -15,7 +15,7 @@ LifeCycleDefinitionGUID=
 RevisionNamingSchemeGUID=
 
 [OutputGroup1]
-Name=BOM.OutJob
+Name=
 Description=
 TargetOutputMedium=Folder Structure
 VariantName=[No Variations]
@@ -60,7 +60,7 @@ ReleaseManaged2=0
 OutputBasePath2=..\..\release\
 OutputPathMedia2==ProjectRevision
 OutputPathMediaValue2==ProjectRevision
-OutputPathOutputer2=[Output Custom]
+OutputPathOutputer2=
 OutputPathOutputerPrefix2=
 OutputPathOutputerValue2=bom
 OutputFileName2=

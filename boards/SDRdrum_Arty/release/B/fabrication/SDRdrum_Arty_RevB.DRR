@@ -1,5 +1,5 @@
 ----------------------------------------------------------------------------------------------------------------------------------
-NCDrill File Report For: SDRdrum_Arty_RevB.PcbDoc   2019-01-27  15:54:35
+NCDrill File Report For: SDRdrum_Arty_RevB.PcbDoc   2019-01-29  20:35:52
 ----------------------------------------------------------------------------------------------------------------------------------
 
 Layer Pair : L1 to L4
@@ -7,8 +7,8 @@ ASCII RoundHoles File : SDRdrum_Arty_RevB.TXT
 
 Tool       Hole Size               Hole Tolerance               Hole Type       Hole Count   Plated         Tool Travel
 ----------------------------------------------------------------------------------------------------------------------------------
-T1      24mil (0.6mm)                                             Round             45        PTH        0.00inch (0.00mm)
-T2      35mil (0.9mm)                                             Round             12        PTH        0.00inch (0.00mm)
+T1      24mil (0.6mm)                                             Round             47        PTH        0.00inch (0.00mm)
+T2      35mil (0.9mm)                                             Round             18        PTH        0.00inch (0.00mm)
 T3      36mil (0.92mm)                                            Round             6         PTH        0.00inch (0.00mm)
 T4      40mil (1.016mm)                                           Round             37        PTH        0.00inch (0.00mm)
 T5      43mil (1.1mm)                                             Round             10        PTH        0.00inch (0.00mm)
@@ -16,6 +16,6 @@ T6      63mil (1.6mm)                                             Round         
 T7      71mil (1.8mm)                                             Round             12        PTH        0.00inch (0.00mm)
 T8      124mil (3.15mm)                                           Round             4         PTH        0.00inch (0.00mm)
 ----------------------------------------------------------------------------------------------------------------------------------
-Totals                                                                              130
+Totals                                                                              138
 
-Total Processing Time (hh:mm:ss) : 00:00:01
+Total Processing Time (hh:mm:ss) : 00:00:00

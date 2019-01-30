@@ -55,22 +55,22 @@ Configuration1_Name7=VisibleOrder
 Configuration1_Item7=Designator=388|LibRef=140|Quantity=67|Supplier 1=75|Supplier Part Number 1=143
 
 [PublishSettings]
-OutputFilePath2=C:\Users\Darryl Ring\Projects\SDRdrum\boards\Arty\release\A\
+OutputFilePath2=E:\repos\SDRdrum\boards\SDRdrum_Arty\release\B\
 ReleaseManaged2=0
-OutputBasePath2=..\release\
+OutputBasePath2=..\..\release\
 OutputPathMedia2==ProjectRevision
 OutputPathMediaValue2==ProjectRevision
-OutputPathOutputer2=[Output Custom]
+OutputPathOutputer2=
 OutputPathOutputerPrefix2=
 OutputPathOutputerValue2=bom
 OutputFileName2=
-OutputFileNameMulti2=
-UseOutputNameForMulti2=1
+OutputFileNameMulti2==ProjectName+ '-BOM'
+UseOutputNameForMulti2=0
 OutputFileNameSpecial2=
 OpenOutput2=1
 
 [GeneratedFilesSettings]
-RelativeOutputPath2=C:\Users\Darryl Ring\Projects\SDRdrum\boards\Arty\release\A\
+RelativeOutputPath2=E:\repos\SDRdrum\boards\SDRdrum_Arty\release\B\
 OpenOutputs2=1
 AddToProject2=1
 TimestampFolder2=0

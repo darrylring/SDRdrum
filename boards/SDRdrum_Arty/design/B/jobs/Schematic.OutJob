@@ -38,9 +38,9 @@ Configuration1_Name1=OutputConfigurationParameter1
 Configuration1_Item1=Record=SchPrintView|ShowNoERC=True|ShowParamSet=True|ShowProbe=True|ShowBlanket=True|NoERCSymbolsToShow="Thin Cross","Thick Cross","Small Cross",Checkbox,Triangle|ShowNote=True|ShowNoteCollapsed=True|ShowOpenEnds=True|ExpandDesignator=True|ExpandNetLabel=False|ExpandPort=False|ExpandSheetNum=False|ExpandDocNum=False|PrintArea=0|PrintAreaRect.X1=0|PrintAreaRect.Y1=0|PrintAreaRect.X2=0|PrintAreaRect.Y2=0
 
 [PublishSettings]
-OutputFilePath1=C:\Users\Darryl Ring\Projects\SDRdrum\boards\Arty\release\A\SDRdrum Arty-Schematics-A.PDF
+OutputFilePath1=E:\repos\SDRdrum\boards\SDRdrum_Arty\release\B\SDRdrum_Arty_RevB-Schematics-B.PDF
 ReleaseManaged1=0
-OutputBasePath1=..\release\
+OutputBasePath1=..\..\release\
 OutputPathMedia1==ProjectRevision
 OutputPathMediaValue1==ProjectRevision
 OutputPathOutputer1=
@@ -49,7 +49,7 @@ OutputPathOutputerValue1=
 OutputFileName1=Schematic.PDF
 OutputFileNameMulti1=
 UseOutputNameForMulti1=0
-OutputFileNameSpecial1==ProjectName+'-Schematics-'+ProjectRevision
+OutputFileNameSpecial1==ProjectName+'-Schematics'
 OpenOutput1=0
 PromptOverwrite1=0
 PublishMethod1=0
@@ -67,6 +67,6 @@ PDFACompliance1=Disabled
 PDFVersion1=Default
 
 [GeneratedFilesSettings]
-RelativeOutputPath1=C:\Users\Darryl Ring\Projects\SDRdrum\boards\Arty\release\A\SDRdrum Arty-Schematics-A.PDF
+RelativeOutputPath1=E:\repos\SDRdrum\boards\SDRdrum_Arty\release\B\SDRdrum_Arty_RevB-Schematics-B.PDF
 OpenOutputs1=0
 
