@@ -1,5 +1,5 @@
-DRC Rules Export File for PCB: E:\repos\SDRdrum\boards\SDRdrum_Arty\design\B\SDRdrum_Arty_RevB.PcbDoc
+DRC Rules Export File for PCB: D:\SDRdrum\boards\SDRdrum_Arty\design\B\pcb\SDRdrum_Arty_RevB.PcbDoc
 RuleKind=ShortCircuit|RuleName=ShortCircuit|Scope=Board|Allowed=0
 RuleKind=Clearance|RuleName=Clearance|Scope=Board|Minimum=6.06
 RuleKind=Width|RuleName=Width|Scope=Board|Minimum=7.87
-RuleKind=SolderMaskExpansion|RuleName=SolderMaskExpansion|Scope=Board|Minimum=0.00
+RuleKind=SolderMaskExpansion|RuleName=SolderMaskExpansion|Scope=Board|Minimum=4.00

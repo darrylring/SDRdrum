@@ -15,7 +15,7 @@ LifeCycleDefinitionGUID=
 RevisionNamingSchemeGUID=
 
 [OutputGroup1]
-Name=Gerbers.OutJob
+Name=
 Description=
 TargetOutputMedium=Folder Structure
 VariantName=[No Variations]
@@ -47,7 +47,7 @@ Configuration2_Name1=OutputConfigurationParameter1
 Configuration2_Item1=BoardEdgeRoutToolDia=2000000|GenerateBoardEdgeRout=False|GenerateDrilledSlotsG85=False|GenerateEIADrillFile=False|GenerateSeparatePlatedNonPlatedFiles=False|NumberOfDecimals=5|NumberOfUnits=2|OptimizeChangeLocationCommands=True|OriginPosition=Relative|Record=DrillView|Units=Imperial|ZeroesMode=SuppressTrailingZeroes
 
 [PublishSettings]
-OutputFilePath1=E:\repos\SDRdrum\boards\SDRdrum_Arty\release\B\
+OutputFilePath1=D:\SDRdrum\boards\SDRdrum_Arty\release\B\
 ReleaseManaged1=0
 OutputBasePath1=..\..\release\
 OutputPathMedia1==ProjectRevision
@@ -62,7 +62,7 @@ OutputFileNameSpecial1=
 OpenOutput1=0
 
 [GeneratedFilesSettings]
-RelativeOutputPath1=E:\repos\SDRdrum\boards\SDRdrum_Arty\release\B\
+RelativeOutputPath1=D:\SDRdrum\boards\SDRdrum_Arty\release\B\
 OpenOutputs1=0
 AddToProject1=0
 TimestampFolder1=0
