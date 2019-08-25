@@ -1,632 +1,522 @@
-﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<bd:repository xmlns:bd="http://www.xilinx.com/bd" bd:BoundaryCRC="0x3663425811F55335" bd:device="xc7a35ticsg324-1L" bd:isValidated="true" bd:synthFlowMode="None" bd:tool_version="2018.2" bd:top="channel" bd:version="1.00.a">
-
-  <spirit:component xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009">
-    <spirit:vendor>xilinx.com</spirit:vendor>
-    <spirit:library>BlockDiagram</spirit:library>
-    <spirit:name>channel</spirit:name>
-    <spirit:version>1.00.a</spirit:version>
-    <spirit:parameters>
-      <spirit:parameter>
-        <spirit:name>isTop</spirit:name>
-        <spirit:value spirit:format="bool" spirit:resolve="immediate">true</spirit:value>
-      </spirit:parameter>
-    </spirit:parameters>
-    <spirit:busInterfaces>
-      <spirit:busInterface>
-        <spirit:name>phase</spirit:name>
-        <spirit:slave/>
-        <spirit:busType spirit:library="interface" spirit:name="axis" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:abstractionType spirit:library="interface" spirit:name="axis_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:parameters>
-          <spirit:parameter>
-            <spirit:name>TDATA_NUM_BYTES</spirit:name>
-            <spirit:value>3</spirit:value>
-            <spirit:vendorExtensions>
-              <bd:configElementInfos>
-                <bd:configElementInfo bd:valueSource="user"/>
-              </bd:configElementInfos>
-            </spirit:vendorExtensions>
-          </spirit:parameter>
-          <spirit:parameter>
-            <spirit:name>TDEST_WIDTH</spirit:name>
-            <spirit:value>0</spirit:value>
-            <spirit:vendorExtensions>
-              <bd:configElementInfos>
-                <bd:configElementInfo bd:valueSource="user"/>
-              </bd:configElementInfos>
-            </spirit:vendorExtensions>
-          </spirit:parameter>
-          <spirit:parameter>
-            <spirit:name>TID_WIDTH</spirit:name>
-            <spirit:value>0</spirit:value>
-            <spirit:vendorExtensions>
-              <bd:configElementInfos>
-                <bd:configElementInfo bd:valueSource="user"/>
-              </bd:configElementInfos>
-            </spirit:vendorExtensions>
-          </spirit:parameter>
-          <spirit:parameter>
-            <spirit:name>TUSER_WIDTH</spirit:name>
-            <spirit:value>0</spirit:value>
-            <spirit:vendorExtensions>
-              <bd:configElementInfos>
-                <bd:configElementInfo bd:valueSource="user"/>
-              </bd:configElementInfos>
-            </spirit:vendorExtensions>
-          </spirit:parameter>
-          <spirit:parameter>
-            <spirit:name>HAS_TREADY</spirit:name>
-            <spirit:value>1</spirit:value>
-            <spirit:vendorExtensions>
-              <bd:configElementInfos>
-                <bd:configElementInfo bd:valueSource="user"/>
-              </bd:configElementInfos>
-            </spirit:vendorExtensions>
-          </spirit:parameter>
-          <spirit:parameter>
-            <spirit:name>HAS_TSTRB</spirit:name>
-            <spirit:value>0</spirit:value>
-            <spirit:vendorExtensions>
-              <bd:configElementInfos>
-                <bd:configElementInfo bd:valueSource="user"/>
-              </bd:configElementInfos>
-            </spirit:vendorExtensions>
-          </spirit:parameter>
-          <spirit:parameter>
-            <spirit:name>HAS_TKEEP</spirit:name>
-            <spirit:value>0</spirit:value>
-            <spirit:vendorExtensions>
-              <bd:configElementInfos>
-                <bd:configElementInfo bd:valueSource="user"/>
-              </bd:configElementInfos>
-            </spirit:vendorExtensions>
-          </spirit:parameter>
-          <spirit:parameter>
-            <spirit:name>HAS_TLAST</spirit:name>
-            <spirit:value>0</spirit:value>
-            <spirit:vendorExtensions>
-              <bd:configElementInfos>
-                <bd:configElementInfo bd:valueSource="user"/>
-              </bd:configElementInfos>
-            </spirit:vendorExtensions>
-          </spirit:parameter>
-          <spirit:parameter>
-            <spirit:name>FREQ_HZ</spirit:name>
-            <spirit:value>100000000</spirit:value>
-            <spirit:vendorExtensions>
-              <bd:configElementInfos>
-                <bd:configElementInfo bd:valueSource="default"/>
-              </bd:configElementInfos>
-            </spirit:vendorExtensions>
-          </spirit:parameter>
-          <spirit:parameter>
-            <spirit:name>PHASE</spirit:name>
-            <spirit:value>0.000</spirit:value>
-            <spirit:vendorExtensions>
-              <bd:configElementInfos>
-                <bd:configElementInfo bd:valueSource="default"/>
-              </bd:configElementInfos>
-            </spirit:vendorExtensions>
-          </spirit:parameter>
-          <spirit:parameter>
-            <spirit:name>CLK_DOMAIN</spirit:name>
-            <spirit:value>channel_aclk</spirit:value>
-            <spirit:vendorExtensions>
-              <bd:configElementInfos>
-                <bd:configElementInfo bd:valueSource="default"/>
-              </bd:configElementInfos>
-            </spirit:vendorExtensions>
-          </spirit:parameter>
-          <spirit:parameter>
-            <spirit:name>LAYERED_METADATA</spirit:name>
-            <spirit:value>undef</spirit:value>
-            <spirit:vendorExtensions>
-              <bd:configElementInfos>
-                <bd:configElementInfo bd:valueSource="user"/>
-              </bd:configElementInfos>
-            </spirit:vendorExtensions>
-          </spirit:parameter>
-        </spirit:parameters>
-      </spirit:busInterface>
-      <spirit:busInterface>
-        <spirit:name>CLK.ACLK</spirit:name>
-        <spirit:displayName>Clk</spirit:displayName>
-        <spirit:description>Clock</spirit:description>
-        <spirit:busType spirit:library="signal" spirit:name="clock" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:abstractionType spirit:library="signal" spirit:name="clock_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:slave/>
-        <spirit:portMaps>
-          <spirit:portMap>
-            <spirit:logicalPort>
-              <spirit:name>CLK</spirit:name>
-            </spirit:logicalPort>
-            <spirit:physicalPort>
-              <spirit:name>aclk</spirit:name>
-            </spirit:physicalPort>
-          </spirit:portMap>
-        </spirit:portMaps>
-        <spirit:parameters>
-          <spirit:parameter>
-            <spirit:name>FREQ_HZ</spirit:name>
-            <spirit:value>100000000</spirit:value>
-            <spirit:vendorExtensions>
-              <bd:configElementInfos>
-                <bd:configElementInfo bd:valueSource="user"/>
-              </bd:configElementInfos>
-            </spirit:vendorExtensions>
-          </spirit:parameter>
-          <spirit:parameter>
-            <spirit:name>PHASE</spirit:name>
-            <spirit:value>0.000</spirit:value>
-            <spirit:vendorExtensions>
-              <bd:configElementInfos>
-                <bd:configElementInfo bd:valueSource="default"/>
-              </bd:configElementInfos>
-            </spirit:vendorExtensions>
-          </spirit:parameter>
-          <spirit:parameter>
-            <spirit:name>CLK_DOMAIN</spirit:name>
-            <spirit:value>channel_aclk</spirit:value>
-            <spirit:vendorExtensions>
-              <bd:configElementInfos>
-                <bd:configElementInfo bd:valueSource="default"/>
-              </bd:configElementInfos>
-            </spirit:vendorExtensions>
-          </spirit:parameter>
-          <spirit:parameter>
-            <spirit:name>ASSOCIATED_BUSIF</spirit:name>
-            <spirit:value>phase</spirit:value>
-            <spirit:vendorExtensions>
-              <bd:configElementInfos>
-                <bd:configElementInfo bd:valueSource="default"/>
-              </bd:configElementInfos>
-            </spirit:vendorExtensions>
-          </spirit:parameter>
-          <spirit:parameter>
-            <spirit:name>ASSOCIATED_RESET</spirit:name>
-            <spirit:value>aresetn</spirit:value>
-            <spirit:vendorExtensions>
-              <bd:configElementInfos>
-                <bd:configElementInfo bd:valueSource="default"/>
-              </bd:configElementInfos>
-            </spirit:vendorExtensions>
-          </spirit:parameter>
-        </spirit:parameters>
-      </spirit:busInterface>
-      <spirit:busInterface>
-        <spirit:name>DATA.SAMPLES_TVALID</spirit:name>
-        <spirit:displayName>Data</spirit:displayName>
-        <spirit:description>Data</spirit:description>
-        <spirit:busType spirit:library="signal" spirit:name="data" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:abstractionType spirit:library="signal" spirit:name="data_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:slave/>
-        <spirit:portMaps>
-          <spirit:portMap>
-            <spirit:logicalPort>
-              <spirit:name>DATA</spirit:name>
-            </spirit:logicalPort>
-            <spirit:physicalPort>
-              <spirit:name>samples_tvalid</spirit:name>
-            </spirit:physicalPort>
-          </spirit:portMap>
-        </spirit:portMaps>
-        <spirit:parameters>
-          <spirit:parameter>
-            <spirit:name>LAYERED_METADATA</spirit:name>
-            <spirit:value>undef</spirit:value>
-            <spirit:vendorExtensions>
-              <bd:configElementInfos>
-                <bd:configElementInfo bd:valueSource="default"/>
-              </bd:configElementInfos>
-            </spirit:vendorExtensions>
-          </spirit:parameter>
-        </spirit:parameters>
-      </spirit:busInterface>
-      <spirit:busInterface>
-        <spirit:name>DATA.SAMPLES_TDATA</spirit:name>
-        <spirit:displayName>Data</spirit:displayName>
-        <spirit:description>Data</spirit:description>
-        <spirit:busType spirit:library="signal" spirit:name="data" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:abstractionType spirit:library="signal" spirit:name="data_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:slave/>
-        <spirit:portMaps>
-          <spirit:portMap>
-            <spirit:logicalPort>
-              <spirit:name>DATA</spirit:name>
-            </spirit:logicalPort>
-            <spirit:physicalPort>
-              <spirit:name>samples_tdata</spirit:name>
-            </spirit:physicalPort>
-          </spirit:portMap>
-        </spirit:portMaps>
-        <spirit:parameters>
-          <spirit:parameter>
-            <spirit:name>LAYERED_METADATA</spirit:name>
-            <spirit:value>undef</spirit:value>
-            <spirit:vendorExtensions>
-              <bd:configElementInfos>
-                <bd:configElementInfo bd:valueSource="default"/>
-              </bd:configElementInfos>
-            </spirit:vendorExtensions>
-          </spirit:parameter>
-          <spirit:parameter>
-            <spirit:name>PortType</spirit:name>
-            <spirit:value>data</spirit:value>
-            <spirit:vendorExtensions>
-              <bd:configElementInfos>
-                <bd:configElementInfo bd:valueSource="default_prop"/>
-              </bd:configElementInfos>
-            </spirit:vendorExtensions>
-          </spirit:parameter>
-          <spirit:parameter>
-            <spirit:name>PortType.PROP_SRC</spirit:name>
-            <spirit:value>false</spirit:value>
-            <spirit:vendorExtensions>
-              <bd:configElementInfos>
-                <bd:configElementInfo bd:valueSource="default_prop"/>
-              </bd:configElementInfos>
-            </spirit:vendorExtensions>
-          </spirit:parameter>
-        </spirit:parameters>
-      </spirit:busInterface>
-      <spirit:busInterface>
-        <spirit:name>RST.ARESETN</spirit:name>
-        <spirit:displayName>Reset</spirit:displayName>
-        <spirit:description>Reset</spirit:description>
-        <spirit:busType spirit:library="signal" spirit:name="reset" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:abstractionType spirit:library="signal" spirit:name="reset_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:slave/>
-        <spirit:portMaps>
-          <spirit:portMap>
-            <spirit:logicalPort>
-              <spirit:name>RST</spirit:name>
-            </spirit:logicalPort>
-            <spirit:physicalPort>
-              <spirit:name>aresetn</spirit:name>
-            </spirit:physicalPort>
-          </spirit:portMap>
-        </spirit:portMaps>
-        <spirit:parameters>
-          <spirit:parameter>
-            <spirit:name>POLARITY</spirit:name>
-            <spirit:value>ACTIVE_LOW</spirit:value>
-            <spirit:vendorExtensions>
-              <bd:configElementInfos>
-                <bd:configElementInfo bd:valueSource="default"/>
-              </bd:configElementInfos>
-            </spirit:vendorExtensions>
-          </spirit:parameter>
-        </spirit:parameters>
-      </spirit:busInterface>
-      <spirit:busInterface>
-        <spirit:name>DATA.MAGNITUDE_TVALID</spirit:name>
-        <spirit:displayName>Data</spirit:displayName>
-        <spirit:description>Data</spirit:description>
-        <spirit:busType spirit:library="signal" spirit:name="data" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:abstractionType spirit:library="signal" spirit:name="data_rtl" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:slave/>
-        <spirit:portMaps>
-          <spirit:portMap>
-            <spirit:logicalPort>
-              <spirit:name>DATA</spirit:name>
-            </spirit:logicalPort>
-            <spirit:physicalPort>
-              <spirit:name>magnitude_tvalid</spirit:name>
-            </spirit:physicalPort>
-          </spirit:portMap>
-        </spirit:portMaps>
-        <spirit:parameters>
-          <spirit:parameter>
-            <spirit:name>LAYERED_METADATA</spirit:name>
-            <spirit:value>undef</spirit:value>
-            <spirit:vendorExtensions>
-              <bd:configElementInfos>
-                <bd:configElementInfo bd:valueSource="default"/>
-              </bd:configElementInfos>
-            </spirit:vendorExtensions>
-          </spirit:parameter>
-        </spirit:parameters>
-      </spirit:busInterface>
-    </spirit:busInterfaces>
-    <spirit:model>
-      <spirit:views>
-        <spirit:view>
-          <spirit:name>BlockDiagram</spirit:name>
-          <spirit:envIdentifier>:vivado.xilinx.com:</spirit:envIdentifier>
-          <spirit:hierarchyRef spirit:library="BlockDiagram" spirit:name="channel_imp" spirit:vendor="xilinx.com" spirit:version="1.00.a"/>
-        </spirit:view>
-      </spirit:views>
-      <spirit:ports>
-        <spirit:port>
-          <spirit:name>aclk</spirit:name>
-          <spirit:wire>
-            <spirit:direction>in</spirit:direction>
-          </spirit:wire>
-        </spirit:port>
-        <spirit:port>
-          <spirit:name>samples_tvalid</spirit:name>
-          <spirit:wire>
-            <spirit:direction>in</spirit:direction>
-          </spirit:wire>
-        </spirit:port>
-        <spirit:port>
-          <spirit:name>samples_tready</spirit:name>
-          <spirit:wire>
-            <spirit:direction>out</spirit:direction>
-          </spirit:wire>
-        </spirit:port>
-        <spirit:port>
-          <spirit:name>samples_tdata</spirit:name>
-          <spirit:wire>
-            <spirit:direction>in</spirit:direction>
-            <spirit:vector>
-              <spirit:left>23</spirit:left>
-              <spirit:right>0</spirit:right>
-            </spirit:vector>
-          </spirit:wire>
-        </spirit:port>
-        <spirit:port>
-          <spirit:name>aresetn</spirit:name>
-          <spirit:wire>
-            <spirit:direction>in</spirit:direction>
-          </spirit:wire>
-        </spirit:port>
-        <spirit:port>
-          <spirit:name>magnitude_tvalid</spirit:name>
-          <spirit:wire>
-            <spirit:direction>out</spirit:direction>
-          </spirit:wire>
-        </spirit:port>
-        <spirit:port>
-          <spirit:name>magnitude_tdata</spirit:name>
-          <spirit:wire>
-            <spirit:direction>out</spirit:direction>
-            <spirit:vector>
-              <spirit:left>31</spirit:left>
-              <spirit:right>0</spirit:right>
-            </spirit:vector>
-          </spirit:wire>
-        </spirit:port>
-      </spirit:ports>
-    </spirit:model>
-  </spirit:component>
-
-  <spirit:design xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009">
-    <spirit:vendor>xilinx.com</spirit:vendor>
-    <spirit:library>BlockDiagram</spirit:library>
-    <spirit:name>channel_imp</spirit:name>
-    <spirit:version>1.00.a</spirit:version>
-    <spirit:componentInstances>
-      <spirit:componentInstance>
-        <spirit:instanceName>concat</spirit:instanceName>
-        <spirit:componentRef spirit:library="ip" spirit:name="xlconcat" spirit:vendor="xilinx.com" spirit:version="2.1"/>
-        <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">channel_concat_0</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="dout_width">48</spirit:configurableElementValue>
-        </spirit:configurableElementValues>
-      </spirit:componentInstance>
-      <spirit:componentInstance>
-        <spirit:instanceName>magnitude</spirit:instanceName>
-        <spirit:componentRef spirit:library="ip" spirit:name="xlslice" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">channel_magnitude_0</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="DIN_TO">0</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="DIN_FROM">31</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="DIN_WIDTH">64</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="DOUT_WIDTH">32</spirit:configurableElementValue>
-        </spirit:configurableElementValues>
-      </spirit:componentInstance>
-      <spirit:componentInstance>
-        <spirit:instanceName>x</spirit:instanceName>
-        <spirit:componentRef spirit:library="ip" spirit:name="xlslice" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">channel_x_0</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="DIN_TO">0</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="DIN_FROM">23</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="DIN_WIDTH">48</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="DOUT_WIDTH">24</spirit:configurableElementValue>
-        </spirit:configurableElementValues>
-      </spirit:componentInstance>
-      <spirit:componentInstance>
-        <spirit:instanceName>y</spirit:instanceName>
-        <spirit:componentRef spirit:library="ip" spirit:name="xlslice" spirit:vendor="xilinx.com" spirit:version="1.0"/>
-        <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">channel_y_0</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="DIN_TO">24</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="DIN_FROM">47</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="DIN_WIDTH">48</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="DOUT_WIDTH">1</spirit:configurableElementValue>
-        </spirit:configurableElementValues>
-      </spirit:componentInstance>
-      <spirit:componentInstance>
-        <spirit:instanceName>zero</spirit:instanceName>
-        <spirit:componentRef spirit:library="ip" spirit:name="xlconstant" spirit:vendor="xilinx.com" spirit:version="1.1"/>
-        <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">channel_zero_0</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="CONST_WIDTH">24</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="CONST_VAL">0</spirit:configurableElementValue>
-        </spirit:configurableElementValues>
-      </spirit:componentInstance>
-      <spirit:componentInstance>
-        <spirit:instanceName>combine_xy</spirit:instanceName>
-        <spirit:componentRef spirit:library="ip" spirit:name="axis_combiner" spirit:vendor="xilinx.com" spirit:version="1.1"/>
-        <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">channel_combine_xy_0</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="TDATA_NUM_BYTES">6</spirit:configurableElementValue>
-        </spirit:configurableElementValues>
-      </spirit:componentInstance>
-      <spirit:componentInstance>
-        <spirit:instanceName>rotate</spirit:instanceName>
-        <spirit:componentRef spirit:library="ip" spirit:name="cordic" spirit:vendor="xilinx.com" spirit:version="6.0"/>
-        <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">channel_rotate_0</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="Architectural_Configuration">Word_Serial</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="Pipelining_Mode">Maximum</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="Phase_Format">Scaled_Radians</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="Input_Width">17</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="Output_Width">24</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="Round_Mode">Round_Pos_Neg_Inf</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="Compensation_Scaling">Embedded_Multiplier</spirit:configurableElementValue>
-        </spirit:configurableElementValues>
-      </spirit:componentInstance>
-      <spirit:componentInstance>
-        <spirit:instanceName>translate</spirit:instanceName>
-        <spirit:componentRef spirit:library="ip" spirit:name="cordic" spirit:vendor="xilinx.com" spirit:version="6.0"/>
-        <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">channel_translate_0</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="Functional_Selection">Translate</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="Architectural_Configuration">Word_Serial</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="Pipelining_Mode">Maximum</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="Data_Format">SignedFraction</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="Phase_Format">Scaled_Radians</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="Input_Width">48</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="Output_Width">32</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="Round_Mode">Round_Pos_Neg_Inf</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="Compensation_Scaling">No_Scale_Compensation</spirit:configurableElementValue>
-        </spirit:configurableElementValues>
-      </spirit:componentInstance>
-      <spirit:componentInstance>
-        <spirit:instanceName>x_cic_filter</spirit:instanceName>
-        <spirit:componentRef spirit:library="ip" spirit:name="cic_compiler" spirit:vendor="xilinx.com" spirit:version="4.0"/>
-        <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">channel_x_cic_filter_0</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="Filter_Type">Decimation</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="Differential_Delay">1</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="Number_Of_Channels">1</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="Fixed_Or_Initial_Rate">1024</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="Minimum_Rate">1024</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="Maximum_Rate">1024</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="Input_Sample_Frequency">1</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="Clock_Frequency">100</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="SamplePeriod">1</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="Input_Data_Width">24</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="Quantization">Truncation</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="Output_Data_Width">48</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="Use_Xtreme_DSP_Slice">false</spirit:configurableElementValue>
-        </spirit:configurableElementValues>
-      </spirit:componentInstance>
-      <spirit:componentInstance>
-        <spirit:instanceName>y_cic_filter</spirit:instanceName>
-        <spirit:componentRef spirit:library="ip" spirit:name="cic_compiler" spirit:vendor="xilinx.com" spirit:version="4.0"/>
-        <spirit:configurableElementValues>
-          <spirit:configurableElementValue spirit:referenceId="bd:xciName">channel_y_cic_filter_0</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="Filter_Type">Decimation</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="Differential_Delay">1</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="Number_Of_Channels">1</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="Fixed_Or_Initial_Rate">1024</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="Minimum_Rate">1024</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="Maximum_Rate">1024</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="Input_Sample_Frequency">1</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="Clock_Frequency">100</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="SamplePeriod">1</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="Input_Data_Width">24</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="Quantization">Truncation</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="Output_Data_Width">48</spirit:configurableElementValue>
-          <spirit:configurableElementValue spirit:referenceId="Use_Xtreme_DSP_Slice">false</spirit:configurableElementValue>
-        </spirit:configurableElementValues>
-      </spirit:componentInstance>
-    </spirit:componentInstances>
-    <spirit:interconnections>
-      <spirit:interconnection>
-        <spirit:name>x_cic_filter_M_AXIS_DATA</spirit:name>
-        <spirit:activeInterface spirit:busRef="S00_AXIS" spirit:componentRef="combine_xy"/>
-        <spirit:activeInterface spirit:busRef="M_AXIS_DATA" spirit:componentRef="x_cic_filter"/>
-      </spirit:interconnection>
-      <spirit:interconnection>
-        <spirit:name>y_cic_filter_M_AXIS_DATA</spirit:name>
-        <spirit:activeInterface spirit:busRef="S01_AXIS" spirit:componentRef="combine_xy"/>
-        <spirit:activeInterface spirit:busRef="M_AXIS_DATA" spirit:componentRef="y_cic_filter"/>
-      </spirit:interconnection>
-      <spirit:interconnection>
-        <spirit:name>combine_xy_M_AXIS</spirit:name>
-        <spirit:activeInterface spirit:busRef="S_AXIS_CARTESIAN" spirit:componentRef="translate"/>
-        <spirit:activeInterface spirit:busRef="M_AXIS" spirit:componentRef="combine_xy"/>
-      </spirit:interconnection>
-    </spirit:interconnections>
-    <spirit:adHocConnections>
-      <spirit:adHocConnection>
-        <spirit:name>aclk_1</spirit:name>
-        <spirit:externalPortReference spirit:portRef="aclk"/>
-        <spirit:internalPortReference spirit:componentRef="combine_xy" spirit:portRef="aclk"/>
-        <spirit:internalPortReference spirit:componentRef="rotate" spirit:portRef="aclk"/>
-        <spirit:internalPortReference spirit:componentRef="translate" spirit:portRef="aclk"/>
-        <spirit:internalPortReference spirit:componentRef="x_cic_filter" spirit:portRef="aclk"/>
-        <spirit:internalPortReference spirit:componentRef="y_cic_filter" spirit:portRef="aclk"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
-        <spirit:name>samples_tvalid_1</spirit:name>
-        <spirit:externalPortReference spirit:portRef="samples_tvalid"/>
-        <spirit:internalPortReference spirit:componentRef="rotate" spirit:portRef="s_axis_cartesian_tvalid"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
-        <spirit:name>cordic_0_s_axis_cartesian_tready</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="rotate" spirit:portRef="s_axis_cartesian_tready"/>
-        <spirit:externalPortReference spirit:portRef="samples_tready"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
-        <spirit:name>samples_tdata_1</spirit:name>
-        <spirit:externalPortReference spirit:portRef="samples_tdata"/>
-        <spirit:internalPortReference spirit:componentRef="concat" spirit:portRef="In0"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
-        <spirit:name>xlconstant_0_dout</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="zero" spirit:portRef="dout"/>
-        <spirit:internalPortReference spirit:componentRef="concat" spirit:portRef="In1"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
-        <spirit:name>xlconcat_0_dout</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="concat" spirit:portRef="dout"/>
-        <spirit:internalPortReference spirit:componentRef="rotate" spirit:portRef="s_axis_cartesian_tdata"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
-        <spirit:name>multiply_m_axis_dout_tdata</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="rotate" spirit:portRef="m_axis_dout_tdata"/>
-        <spirit:internalPortReference spirit:componentRef="x" spirit:portRef="Din"/>
-        <spirit:internalPortReference spirit:componentRef="y" spirit:portRef="Din"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
-        <spirit:name>x_Dout</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="x" spirit:portRef="Dout"/>
-        <spirit:internalPortReference spirit:componentRef="x_cic_filter" spirit:portRef="s_axis_data_tdata"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
-        <spirit:name>multiply_m_axis_dout_tvalid</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="rotate" spirit:portRef="m_axis_dout_tvalid"/>
-        <spirit:internalPortReference spirit:componentRef="x_cic_filter" spirit:portRef="s_axis_data_tvalid"/>
-        <spirit:internalPortReference spirit:componentRef="y_cic_filter" spirit:portRef="s_axis_data_tvalid"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
-        <spirit:name>y_Dout</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="y" spirit:portRef="Dout"/>
-        <spirit:internalPortReference spirit:componentRef="y_cic_filter" spirit:portRef="s_axis_data_tdata"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
-        <spirit:name>aresetn_1</spirit:name>
-        <spirit:externalPortReference spirit:portRef="aresetn"/>
-        <spirit:internalPortReference spirit:componentRef="combine_xy" spirit:portRef="aresetn"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
-        <spirit:name>translate_m_axis_dout_tdata</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="translate" spirit:portRef="m_axis_dout_tdata"/>
-        <spirit:internalPortReference spirit:componentRef="magnitude" spirit:portRef="Din"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
-        <spirit:name>translate_m_axis_dout_tvalid</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="translate" spirit:portRef="m_axis_dout_tvalid"/>
-        <spirit:externalPortReference spirit:portRef="magnitude_tvalid"/>
-      </spirit:adHocConnection>
-      <spirit:adHocConnection>
-        <spirit:name>magnitude_Dout</spirit:name>
-        <spirit:internalPortReference spirit:componentRef="magnitude" spirit:portRef="Dout"/>
-        <spirit:externalPortReference spirit:portRef="magnitude_tdata"/>
-      </spirit:adHocConnection>
-    </spirit:adHocConnections>
-    <spirit:hierConnections>
-      <spirit:hierConnection spirit:interfaceRef="phase/phase_1">
-        <spirit:activeInterface spirit:busRef="S_AXIS_PHASE" spirit:componentRef="rotate"/>
-      </spirit:hierConnection>
-    </spirit:hierConnections>
-  </spirit:design>
-
-</bd:repository>
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x3663425823159DA2",
+      "device": "xc7a35ticsg324-1L",
+      "name": "channel",
+      "synth_flow_mode": "None",
+      "tool_version": "2019.1",
+      "validated": "true"
+    },
+    "design_tree": {
+      "concat": "",
+      "magnitude": "",
+      "x": "",
+      "y": "",
+      "zero": "",
+      "combine_xy": "",
+      "rotate": "",
+      "translate": "",
+      "x_cic_filter": "",
+      "y_cic_filter": ""
+    },
+    "interface_ports": {
+      "phase": {
+        "mode": "Slave",
+        "vlnv": "xilinx.com:interface:axis_rtl:1.0",
+        "parameters": {
+          "CLK_DOMAIN": {
+            "value": "channel_aclk",
+            "value_src": "default"
+          },
+          "FREQ_HZ": {
+            "value": "100000000",
+            "value_src": "default"
+          },
+          "HAS_TKEEP": {
+            "value": "0"
+          },
+          "HAS_TLAST": {
+            "value": "0"
+          },
+          "HAS_TREADY": {
+            "value": "1"
+          },
+          "HAS_TSTRB": {
+            "value": "0"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "LAYERED_METADATA": {
+            "value": "undef"
+          },
+          "PHASE": {
+            "value": "0.000",
+            "value_src": "default"
+          },
+          "TDATA_NUM_BYTES": {
+            "value": "3"
+          },
+          "TDEST_WIDTH": {
+            "value": "0"
+          },
+          "TID_WIDTH": {
+            "value": "0"
+          },
+          "TUSER_WIDTH": {
+            "value": "0"
+          }
+        }
+      }
+    },
+    "ports": {
+      "aclk": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "ASSOCIATED_BUSIF": {
+            "value": "phase",
+            "value_src": "default"
+          },
+          "ASSOCIATED_RESET": {
+            "value": "aresetn",
+            "value_src": "default"
+          },
+          "CLK_DOMAIN": {
+            "value": "channel_aclk",
+            "value_src": "default"
+          },
+          "FREQ_HZ": {
+            "value": "100000000"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.000",
+            "value_src": "default"
+          }
+        }
+      },
+      "samples_tvalid": {
+        "type": "data",
+        "direction": "I",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
+      },
+      "samples_tready": {
+        "direction": "O"
+      },
+      "samples_tdata": {
+        "type": "data",
+        "direction": "I",
+        "left": "23",
+        "right": "0",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          },
+          "PortType": {
+            "value": "data",
+            "value_src": "default_prop"
+          },
+          "PortType.PROP_SRC": {
+            "value": "false",
+            "value_src": "default_prop"
+          }
+        }
+      },
+      "aresetn": {
+        "type": "rst",
+        "direction": "I",
+        "parameters": {
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "POLARITY": {
+            "value": "ACTIVE_LOW",
+            "value_src": "default"
+          }
+        }
+      },
+      "magnitude_tvalid": {
+        "type": "data",
+        "direction": "O",
+        "parameters": {
+          "LAYERED_METADATA": {
+            "value": "undef",
+            "value_src": "default"
+          }
+        }
+      },
+      "magnitude_tdata": {
+        "direction": "O",
+        "left": "31",
+        "right": "0"
+      }
+    },
+    "components": {
+      "concat": {
+        "vlnv": "xilinx.com:ip:xlconcat:2.1",
+        "xci_name": "channel_concat_0",
+        "parameters": {
+          "dout_width": {
+            "value": "48"
+          }
+        }
+      },
+      "magnitude": {
+        "vlnv": "xilinx.com:ip:xlslice:1.0",
+        "xci_name": "channel_magnitude_0",
+        "parameters": {
+          "DIN_FROM": {
+            "value": "31"
+          },
+          "DIN_TO": {
+            "value": "0"
+          },
+          "DIN_WIDTH": {
+            "value": "64"
+          },
+          "DOUT_WIDTH": {
+            "value": "32"
+          }
+        }
+      },
+      "x": {
+        "vlnv": "xilinx.com:ip:xlslice:1.0",
+        "xci_name": "channel_x_0",
+        "parameters": {
+          "DIN_FROM": {
+            "value": "23"
+          },
+          "DIN_TO": {
+            "value": "0"
+          },
+          "DIN_WIDTH": {
+            "value": "48"
+          },
+          "DOUT_WIDTH": {
+            "value": "24"
+          }
+        }
+      },
+      "y": {
+        "vlnv": "xilinx.com:ip:xlslice:1.0",
+        "xci_name": "channel_y_0",
+        "parameters": {
+          "DIN_FROM": {
+            "value": "47"
+          },
+          "DIN_TO": {
+            "value": "24"
+          },
+          "DIN_WIDTH": {
+            "value": "48"
+          },
+          "DOUT_WIDTH": {
+            "value": "1"
+          }
+        }
+      },
+      "zero": {
+        "vlnv": "xilinx.com:ip:xlconstant:1.1",
+        "xci_name": "channel_zero_0",
+        "parameters": {
+          "CONST_VAL": {
+            "value": "0"
+          },
+          "CONST_WIDTH": {
+            "value": "24"
+          }
+        }
+      },
+      "combine_xy": {
+        "vlnv": "xilinx.com:ip:axis_combiner:1.1",
+        "xci_name": "channel_combine_xy_0",
+        "parameters": {
+          "TDATA_NUM_BYTES": {
+            "value": "6"
+          }
+        }
+      },
+      "rotate": {
+        "vlnv": "xilinx.com:ip:cordic:6.0",
+        "xci_name": "channel_rotate_0",
+        "parameters": {
+          "Architectural_Configuration": {
+            "value": "Word_Serial"
+          },
+          "Compensation_Scaling": {
+            "value": "Embedded_Multiplier"
+          },
+          "Input_Width": {
+            "value": "17"
+          },
+          "Output_Width": {
+            "value": "24"
+          },
+          "Phase_Format": {
+            "value": "Scaled_Radians"
+          },
+          "Pipelining_Mode": {
+            "value": "Maximum"
+          },
+          "Round_Mode": {
+            "value": "Round_Pos_Neg_Inf"
+          }
+        }
+      },
+      "translate": {
+        "vlnv": "xilinx.com:ip:cordic:6.0",
+        "xci_name": "channel_translate_0",
+        "parameters": {
+          "Architectural_Configuration": {
+            "value": "Word_Serial"
+          },
+          "Compensation_Scaling": {
+            "value": "No_Scale_Compensation"
+          },
+          "Data_Format": {
+            "value": "SignedFraction"
+          },
+          "Functional_Selection": {
+            "value": "Translate"
+          },
+          "Input_Width": {
+            "value": "48"
+          },
+          "Output_Width": {
+            "value": "32"
+          },
+          "Phase_Format": {
+            "value": "Scaled_Radians"
+          },
+          "Pipelining_Mode": {
+            "value": "Maximum"
+          },
+          "Round_Mode": {
+            "value": "Round_Pos_Neg_Inf"
+          }
+        }
+      },
+      "x_cic_filter": {
+        "vlnv": "xilinx.com:ip:cic_compiler:4.0",
+        "xci_name": "channel_x_cic_filter_0",
+        "parameters": {
+          "Clock_Frequency": {
+            "value": "100"
+          },
+          "Differential_Delay": {
+            "value": "1"
+          },
+          "Filter_Type": {
+            "value": "Decimation"
+          },
+          "Fixed_Or_Initial_Rate": {
+            "value": "1024"
+          },
+          "Input_Data_Width": {
+            "value": "24"
+          },
+          "Input_Sample_Frequency": {
+            "value": "1"
+          },
+          "Maximum_Rate": {
+            "value": "1024"
+          },
+          "Minimum_Rate": {
+            "value": "1024"
+          },
+          "Number_Of_Channels": {
+            "value": "1"
+          },
+          "Output_Data_Width": {
+            "value": "48"
+          },
+          "Quantization": {
+            "value": "Truncation"
+          },
+          "SamplePeriod": {
+            "value": "1"
+          },
+          "Use_Xtreme_DSP_Slice": {
+            "value": "false"
+          }
+        }
+      },
+      "y_cic_filter": {
+        "vlnv": "xilinx.com:ip:cic_compiler:4.0",
+        "xci_name": "channel_y_cic_filter_0",
+        "parameters": {
+          "Clock_Frequency": {
+            "value": "100"
+          },
+          "Differential_Delay": {
+            "value": "1"
+          },
+          "Filter_Type": {
+            "value": "Decimation"
+          },
+          "Fixed_Or_Initial_Rate": {
+            "value": "1024"
+          },
+          "Input_Data_Width": {
+            "value": "24"
+          },
+          "Input_Sample_Frequency": {
+            "value": "1"
+          },
+          "Maximum_Rate": {
+            "value": "1024"
+          },
+          "Minimum_Rate": {
+            "value": "1024"
+          },
+          "Number_Of_Channels": {
+            "value": "1"
+          },
+          "Output_Data_Width": {
+            "value": "48"
+          },
+          "Quantization": {
+            "value": "Truncation"
+          },
+          "SamplePeriod": {
+            "value": "1"
+          },
+          "Use_Xtreme_DSP_Slice": {
+            "value": "false"
+          }
+        }
+      }
+    },
+    "interface_nets": {
+      "y_cic_filter_M_AXIS_DATA": {
+        "interface_ports": [
+          "combine_xy/S01_AXIS",
+          "y_cic_filter/M_AXIS_DATA"
+        ]
+      },
+      "combine_xy_M_AXIS": {
+        "interface_ports": [
+          "translate/S_AXIS_CARTESIAN",
+          "combine_xy/M_AXIS"
+        ]
+      },
+      "phase_1": {
+        "interface_ports": [
+          "phase",
+          "rotate/S_AXIS_PHASE"
+        ]
+      },
+      "x_cic_filter_M_AXIS_DATA": {
+        "interface_ports": [
+          "combine_xy/S00_AXIS",
+          "x_cic_filter/M_AXIS_DATA"
+        ]
+      }
+    },
+    "nets": {
+      "aclk_1": {
+        "ports": [
+          "aclk",
+          "combine_xy/aclk",
+          "rotate/aclk",
+          "translate/aclk",
+          "x_cic_filter/aclk",
+          "y_cic_filter/aclk"
+        ]
+      },
+      "samples_tvalid_1": {
+        "ports": [
+          "samples_tvalid",
+          "rotate/s_axis_cartesian_tvalid"
+        ]
+      },
+      "cordic_0_s_axis_cartesian_tready": {
+        "ports": [
+          "rotate/s_axis_cartesian_tready",
+          "samples_tready"
+        ]
+      },
+      "samples_tdata_1": {
+        "ports": [
+          "samples_tdata",
+          "concat/In0"
+        ]
+      },
+      "xlconstant_0_dout": {
+        "ports": [
+          "zero/dout",
+          "concat/In1"
+        ]
+      },
+      "xlconcat_0_dout": {
+        "ports": [
+          "concat/dout",
+          "rotate/s_axis_cartesian_tdata"
+        ]
+      },
+      "multiply_m_axis_dout_tdata": {
+        "ports": [
+          "rotate/m_axis_dout_tdata",
+          "x/Din",
+          "y/Din"
+        ]
+      },
+      "x_Dout": {
+        "ports": [
+          "x/Dout",
+          "x_cic_filter/s_axis_data_tdata"
+        ]
+      },
+      "multiply_m_axis_dout_tvalid": {
+        "ports": [
+          "rotate/m_axis_dout_tvalid",
+          "x_cic_filter/s_axis_data_tvalid",
+          "y_cic_filter/s_axis_data_tvalid"
+        ]
+      },
+      "y_Dout": {
+        "ports": [
+          "y/Dout",
+          "y_cic_filter/s_axis_data_tdata"
+        ]
+      },
+      "aresetn_1": {
+        "ports": [
+          "aresetn",
+          "combine_xy/aresetn"
+        ]
+      },
+      "translate_m_axis_dout_tdata": {
+        "ports": [
+          "translate/m_axis_dout_tdata",
+          "magnitude/Din"
+        ]
+      },
+      "translate_m_axis_dout_tvalid": {
+        "ports": [
+          "translate/m_axis_dout_tvalid",
+          "magnitude_tvalid"
+        ]
+      },
+      "magnitude_Dout": {
+        "ports": [
+          "magnitude/Dout",
+          "magnitude_tdata"
+        ]
+      }
+    }
+  }
+}
