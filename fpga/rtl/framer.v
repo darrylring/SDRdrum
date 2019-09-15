@@ -165,8 +165,8 @@ always @* begin
 
             case (m_axi_awaddr)
                 13'h00: wdata_next = 32'hFFFFFFFF;
-                13'h04: wdata_next = 32'h2211FFFF;
-                13'h08: wdata_next = 32'h66554433;
+                13'h04: wdata_next = 32'h1800FFFF;
+                13'h08: wdata_next = 32'h6b4d023e;
                 13'h0c: wdata_next = 32'h00450008;
                 13'h10: wdata_next = 32'h00005400;
                 13'h14: wdata_next = 32'h11ff0000;

@@ -137,7 +137,7 @@ axis_phase_generator #(
     .aclk(clk),
     .aresetn(resetn),
     
-    .cfg_data(freq_1),
+    .cfg_data({2'b0, freq_1}),
     
     .m_axis_tready(stick_1_phase_ready),
     .m_axis_tdata(stick_1_phase_data),
@@ -151,7 +151,7 @@ axis_phase_generator #(
     .aclk(clk),
     .aresetn(resetn),
     
-    .cfg_data(freq_2),
+    .cfg_data({2'b0, freq_2}),
     
     .m_axis_tready(stick_2_phase_ready),
     .m_axis_tdata(stick_2_phase_data),
