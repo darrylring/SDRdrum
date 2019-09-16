@@ -436,7 +436,7 @@ channel corner_dsp_2_d (
 // Ethernet Framer
 //==============================================================================
 
-wire [12:0] eth_mac_axi_awaddr;
+wire [31:0] eth_mac_axi_awaddr;
 wire eth_mac_axi_awvalid;
 wire eth_mac_axi_awready;
 
@@ -449,7 +449,7 @@ wire [1:0] eth_mac_axi_bresp;
 wire eth_mac_axi_bvalid;
 wire eth_mac_axi_bready;
 
-wire [12:0] eth_mac_axi_araddr;
+wire [31:0] eth_mac_axi_araddr;
 wire eth_mac_axi_arvalid;
 wire eth_mac_axi_arready;
 
@@ -501,7 +501,7 @@ controller controller (
     .ext_reset(rstn_in),
     .resetn(resetn),
     
-    .eth_mac_axi_awaddr({19'b0, eth_mac_axi_awaddr}),
+    .eth_mac_axi_awaddr(eth_mac_axi_awaddr),
     .eth_mac_axi_awvalid(eth_mac_axi_awvalid),
     .eth_mac_axi_awready(eth_mac_axi_awready),
     .eth_mac_axi_awprot(3'b0),
@@ -515,7 +515,7 @@ controller controller (
     .eth_mac_axi_bvalid(eth_mac_axi_bvalid),
     .eth_mac_axi_bready(eth_mac_axi_bready),
     
-    .eth_mac_axi_araddr({19'b0, eth_mac_axi_araddr}),
+    .eth_mac_axi_araddr(eth_mac_axi_araddr),
     .eth_mac_axi_arvalid(eth_mac_axi_arvalid),
     .eth_mac_axi_arready(eth_mac_axi_arready),
     .eth_mac_axi_arprot(3'b0),

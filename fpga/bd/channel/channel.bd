@@ -401,10 +401,10 @@
       }
     },
     "interface_nets": {
-      "y_cic_filter_M_AXIS_DATA": {
+      "x_cic_filter_M_AXIS_DATA": {
         "interface_ports": [
-          "combine_xy/S01_AXIS",
-          "y_cic_filter/M_AXIS_DATA"
+          "combine_xy/S00_AXIS",
+          "x_cic_filter/M_AXIS_DATA"
         ]
       },
       "combine_xy_M_AXIS": {
@@ -419,10 +419,10 @@
           "rotate/S_AXIS_PHASE"
         ]
       },
-      "x_cic_filter_M_AXIS_DATA": {
+      "y_cic_filter_M_AXIS_DATA": {
         "interface_ports": [
-          "combine_xy/S00_AXIS",
-          "x_cic_filter/M_AXIS_DATA"
+          "combine_xy/S01_AXIS",
+          "y_cic_filter/M_AXIS_DATA"
         ]
       }
     },

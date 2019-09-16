@@ -351,28 +351,22 @@
           }
         },
         "interface_nets": {
-          "microblaze_0_dlmb_bus": {
-            "interface_ports": [
-              "dlmb_v10/LMB_Sl_0",
-              "dlmb_bram_if_cntlr/SLMB"
-            ]
-          },
           "microblaze_0_dlmb": {
             "interface_ports": [
               "DLMB",
               "dlmb_v10/LMB_M"
             ]
           },
-          "microblaze_0_ilmb_bus": {
+          "microblaze_0_dlmb_bus": {
             "interface_ports": [
-              "ilmb_v10/LMB_Sl_0",
-              "ilmb_bram_if_cntlr/SLMB"
+              "dlmb_v10/LMB_Sl_0",
+              "dlmb_bram_if_cntlr/SLMB"
             ]
           },
-          "microblaze_0_dlmb_cntlr": {
+          "microblaze_0_ilmb_cntlr": {
             "interface_ports": [
-              "dlmb_bram_if_cntlr/BRAM_PORT",
-              "lmb_bram/BRAM_PORTA"
+              "ilmb_bram_if_cntlr/BRAM_PORT",
+              "lmb_bram/BRAM_PORTB"
             ]
           },
           "microblaze_0_ilmb": {
@@ -381,10 +375,16 @@
               "ilmb_v10/LMB_M"
             ]
           },
-          "microblaze_0_ilmb_cntlr": {
+          "microblaze_0_dlmb_cntlr": {
             "interface_ports": [
-              "ilmb_bram_if_cntlr/BRAM_PORT",
-              "lmb_bram/BRAM_PORTB"
+              "dlmb_bram_if_cntlr/BRAM_PORT",
+              "lmb_bram/BRAM_PORTA"
+            ]
+          },
+          "microblaze_0_ilmb_bus": {
+            "interface_ports": [
+              "ilmb_v10/LMB_Sl_0",
+              "ilmb_bram_if_cntlr/SLMB"
             ]
           }
         },
@@ -593,7 +593,7 @@
         "components": {
           "xbar": {
             "vlnv": "xilinx.com:ip:axi_crossbar:2.1",
-            "xci_name": "controller_xbar_1",
+            "xci_name": "controller_xbar_0",
             "parameters": {
               "NUM_MI": {
                 "value": "1"
@@ -794,16 +794,16 @@
               "s01_couplers/S_AXI"
             ]
           },
-          "s01_couplers_to_xbar": {
-            "interface_ports": [
-              "s01_couplers/M_AXI",
-              "xbar/S01_AXI"
-            ]
-          },
           "m00_couplers_to_eth_intercon": {
             "interface_ports": [
               "M00_AXI",
               "m00_couplers/M_AXI"
+            ]
+          },
+          "s01_couplers_to_xbar": {
+            "interface_ports": [
+              "s01_couplers/M_AXI",
+              "xbar/S01_AXI"
             ]
           },
           "xbar_to_m00_couplers": {
@@ -1073,7 +1073,7 @@
         "components": {
           "xbar": {
             "vlnv": "xilinx.com:ip:axi_crossbar:2.1",
-            "xci_name": "controller_xbar_0",
+            "xci_name": "controller_xbar_1",
             "parameters": {
               "NUM_MI": {
                 "value": "6"
@@ -1466,22 +1466,10 @@
           }
         },
         "interface_nets": {
-          "xbar_to_m05_couplers": {
-            "interface_ports": [
-              "xbar/M05_AXI",
-              "m05_couplers/S_AXI"
-            ]
-          },
           "periph_intercon_to_s00_couplers": {
             "interface_ports": [
               "S00_AXI",
               "s00_couplers/S_AXI"
-            ]
-          },
-          "s00_couplers_to_xbar": {
-            "interface_ports": [
-              "s00_couplers/M_AXI",
-              "xbar/S00_AXI"
             ]
           },
           "m00_couplers_to_periph_intercon": {
@@ -1490,16 +1478,22 @@
               "m00_couplers/M_AXI"
             ]
           },
-          "xbar_to_m00_couplers": {
+          "s00_couplers_to_xbar": {
             "interface_ports": [
-              "xbar/M00_AXI",
-              "m00_couplers/S_AXI"
+              "s00_couplers/M_AXI",
+              "xbar/S00_AXI"
             ]
           },
           "m01_couplers_to_periph_intercon": {
             "interface_ports": [
               "M01_AXI",
               "m01_couplers/M_AXI"
+            ]
+          },
+          "xbar_to_m00_couplers": {
+            "interface_ports": [
+              "xbar/M00_AXI",
+              "m00_couplers/S_AXI"
             ]
           },
           "m02_couplers_to_periph_intercon": {
@@ -1514,16 +1508,16 @@
               "m01_couplers/S_AXI"
             ]
           },
-          "xbar_to_m02_couplers": {
-            "interface_ports": [
-              "xbar/M02_AXI",
-              "m02_couplers/S_AXI"
-            ]
-          },
           "m03_couplers_to_periph_intercon": {
             "interface_ports": [
               "M03_AXI",
               "m03_couplers/M_AXI"
+            ]
+          },
+          "xbar_to_m02_couplers": {
+            "interface_ports": [
+              "xbar/M02_AXI",
+              "m02_couplers/S_AXI"
             ]
           },
           "xbar_to_m03_couplers": {
@@ -1548,6 +1542,12 @@
             "interface_ports": [
               "M05_AXI",
               "m05_couplers/M_AXI"
+            ]
+          },
+          "xbar_to_m05_couplers": {
+            "interface_ports": [
+              "xbar/M05_AXI",
+              "m05_couplers/S_AXI"
             ]
           }
         },
@@ -1751,40 +1751,10 @@
       }
     },
     "interface_nets": {
-      "microblaze_0_axi_periph_M01_AXI": {
+      "S01_AXI_1": {
         "interface_ports": [
-          "periph_intercon/M01_AXI",
-          "eth_intercon/S00_AXI"
-        ]
-      },
-      "peripheral_interconnect_M02_AXI": {
-        "interface_ports": [
-          "periph_intercon/M02_AXI",
-          "timer/S_AXI"
-        ]
-      },
-      "axi_interconnect_0_M00_AXI": {
-        "interface_ports": [
-          "eth_intercon/M00_AXI",
-          "eth_mac/S_AXI"
-        ]
-      },
-      "peripheral_interconnect_M03_AXI": {
-        "interface_ports": [
-          "periph_intercon/M03_AXI",
-          "uart/S_AXI"
-        ]
-      },
-      "periph_intercon_M05_AXI": {
-        "interface_ports": [
-          "periph_intercon/M05_AXI",
-          "freqs/S_AXI"
-        ]
-      },
-      "microblaze_0_intc_axi": {
-        "interface_ports": [
-          "periph_intercon/M00_AXI",
-          "intc/s_axi"
+          "eth_mac_axi",
+          "eth_intercon/S01_AXI"
         ]
       },
       "axi_uartlite_0_UART": {
@@ -1793,10 +1763,10 @@
           "uart/UART"
         ]
       },
-      "microblaze_0_debug": {
+      "microblaze_0_dlmb_1": {
         "interface_ports": [
-          "mdm/MBDEBUG_0",
-          "mb/DEBUG"
+          "mb/DLMB",
+          "local_mem/DLMB"
         ]
       },
       "periph_intercon_M04_AXI": {
@@ -1811,16 +1781,28 @@
           "mb/M_AXI_DP"
         ]
       },
-      "S01_AXI_1": {
+      "freqs_GPIO2": {
         "interface_ports": [
-          "eth_mac_axi",
-          "eth_intercon/S01_AXI"
+          "freq_2",
+          "freqs/GPIO2"
         ]
       },
-      "microblaze_0_dlmb_1": {
+      "periph_intercon_M05_AXI": {
         "interface_ports": [
-          "mb/DLMB",
-          "local_mem/DLMB"
+          "periph_intercon/M05_AXI",
+          "freqs/S_AXI"
+        ]
+      },
+      "axi_interconnect_0_M00_AXI": {
+        "interface_ports": [
+          "eth_intercon/M00_AXI",
+          "eth_mac/S_AXI"
+        ]
+      },
+      "peripheral_interconnect_M03_AXI": {
+        "interface_ports": [
+          "periph_intercon/M03_AXI",
+          "uart/S_AXI"
         ]
       },
       "microblaze_0_interrupt": {
@@ -1829,10 +1811,16 @@
           "mb/INTERRUPT"
         ]
       },
-      "microblaze_0_ilmb_1": {
+      "peripheral_interconnect_M02_AXI": {
         "interface_ports": [
-          "mb/ILMB",
-          "local_mem/ILMB"
+          "periph_intercon/M02_AXI",
+          "timer/S_AXI"
+        ]
+      },
+      "microblaze_0_axi_periph_M01_AXI": {
+        "interface_ports": [
+          "periph_intercon/M01_AXI",
+          "eth_intercon/S00_AXI"
         ]
       },
       "axi_ethernetlite_0_MII": {
@@ -1841,16 +1829,28 @@
           "eth_mac/MII"
         ]
       },
+      "microblaze_0_debug": {
+        "interface_ports": [
+          "mdm/MBDEBUG_0",
+          "mb/DEBUG"
+        ]
+      },
+      "microblaze_0_ilmb_1": {
+        "interface_ports": [
+          "mb/ILMB",
+          "local_mem/ILMB"
+        ]
+      },
       "freqs_GPIO": {
         "interface_ports": [
           "freq_1",
           "freqs/GPIO"
         ]
       },
-      "freqs_GPIO2": {
+      "microblaze_0_intc_axi": {
         "interface_ports": [
-          "freq_2",
-          "freqs/GPIO2"
+          "periph_intercon/M00_AXI",
+          "intc/s_axi"
         ]
       }
     },

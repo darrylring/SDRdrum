@@ -44,7 +44,7 @@ module framer (
     output wire         s_axis_tready,
 
     // Frame output
-    output wire [12:0] m_axi_awaddr,
+    output wire [31:0] m_axi_awaddr,
     output wire        m_axi_awvalid,
     input  wire        m_axi_awready,
 
@@ -57,7 +57,7 @@ module framer (
     input  wire        m_axi_bvalid,
     output wire        m_axi_bready,
 
-    output wire [12:0] m_axi_araddr,
+    output wire [31:0] m_axi_araddr,
     output wire        m_axi_arvalid,
     input  wire        m_axi_arready,
 
@@ -81,20 +81,20 @@ reg  [2:0] state;
 reg  [2:0] state_next;
 
 reg         tready_reg;
-reg  [12:0] awaddr_reg;
+reg  [31:0] awaddr_reg;
 reg         awvalid_reg;
 reg  [31:0] wdata_reg;
 reg         wvalid_reg;
-reg  [12:0] araddr_reg;
+reg  [31:0] araddr_reg;
 reg         arvalid_reg;
 reg         rready_reg;
 
 reg         tready_next;
-reg  [12:0] awaddr_next; 
+reg  [31:0] awaddr_next; 
 reg         awvalid_next;
 reg  [31:0] wdata_next;
 reg         wvalid_next;
-reg  [12:0] araddr_next;
+reg  [31:0] araddr_next;
 reg         arvalid_next;
 reg         rready_next;
 
@@ -119,7 +119,7 @@ always @* begin
     
     case (state)
         STATE_INIT: begin
-            awaddr_next = 13'h07f4;
+            awaddr_next = 32'h40E0_07f4;
             wdata_next = 32'h0062;
             
             if (m_axi_awready) begin
@@ -133,7 +133,7 @@ always @* begin
             
             if (m_axi_wready) begin
                 if (m_axi_wvalid) begin
-                    awaddr_next = 13'b0;
+                    awaddr_next = 32'h40E0_0000;
                     awvalid_next = 1'b0;
                     wvalid_next = 1'b0;
                     wdata_next = 32'b0;
@@ -149,7 +149,7 @@ always @* begin
             if (s_axis_tready & s_axis_tvalid) begin
                 data_next = s_axis_tdata;
                 tready_next = 1'b0;
-                awaddr_next = 13'b0;
+                awaddr_next = 32'h40E0_0000;
                 awvalid_next = 1'b1;
                 rready_next = 1'b0;
                 state_next = STATE_WRITE_FRAME;
@@ -163,7 +163,7 @@ always @* begin
         STATE_WRITE_FRAME: begin
             state_next = STATE_WRITE_FRAME;
 
-            case (m_axi_awaddr)
+            case (m_axi_awaddr[12:0])
                 13'h00: wdata_next = 32'hFFFFFFFF;
                 13'h04: wdata_next = 32'h1800FFFF;
                 13'h08: wdata_next = 32'h6b4d023e;
@@ -201,12 +201,12 @@ always @* begin
             end
         
             if (m_axi_wready) begin
-                if (m_axi_awaddr <= 13'h60) begin
-                    awaddr_next = awaddr_reg + 13'h4;
+                if (m_axi_awaddr <= 32'h40E0_0060) begin
+                    awaddr_next = awaddr_reg + 32'h4;
                     awvalid_next = 1'b1;
                     wvalid_next = 1'b0;
                 end else begin
-                    awaddr_next = 13'h07fc;
+                    awaddr_next = 32'h40E0_07fc;
                     awvalid_next = 1'b1;
                     wvalid_next = 1'b0;
                     state_next = STATE_TX_FRAME;
@@ -229,7 +229,7 @@ always @* begin
             
             if (m_axi_wready) begin
                 if (m_axi_wvalid) begin
-                    awaddr_next = 13'b0;
+                    awaddr_next = 32'h40E0_0000;
                     awvalid_next = 1'b0;
                     wvalid_next = 1'b0;
                     wdata_next = 32'b0;
@@ -250,7 +250,7 @@ always @* begin
                     state_next = STATE_WAIT_DONE;
                 end
             end else begin
-                araddr_next = 13'h07fc;
+                araddr_next = 32'h40E0_07fc;
                 arvalid_next = 1'b1;
                 rready_next = 1'b1;
                 
@@ -269,13 +269,13 @@ always @(posedge aclk) begin
         
         tready_reg <= 1'b0;
 
-        awaddr_reg <= 13'b0;
+        awaddr_reg <= 32'b0;
         awvalid_reg <= 1'b0;
 
         wdata_reg <= 32'b0;
         wvalid_reg <= 1'b0;
 
-        araddr_reg <= 13'b0;
+        araddr_reg <= 32'b0;
         arvalid_reg <= 1'b0;
         
         rready_reg <= 1'b0;
